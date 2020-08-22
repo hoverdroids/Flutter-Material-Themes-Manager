@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:theme_manager/src/theme_group.dart';
 
+import 'color_palettes.dart';
+
 class DarkThemeGroup extends ThemeGroup {
 
-  DarkThemeGroup([colorPalette]) : super(colorPalette);
+  //DarkThemeGroup([colorPalette]) : super(colorPalette);
+  //ColorPalette colorPalette = ColorPalette();
 
   @override
   ThemeData mainOnMain() {

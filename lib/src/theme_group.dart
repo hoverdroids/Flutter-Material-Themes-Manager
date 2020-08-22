@@ -5,9 +5,11 @@ import '../theme_manager.dart';
 
 abstract class ThemeGroup {
 
-  ColorPalette colorPalette = ColorPalette();
+  ColorPalette colorPalette = GreenPalette();
 
-  ThemeGroup([this.colorPalette]);
+  void updateColorPalette(ColorPalette colorPalette) {
+    this.colorPalette = colorPalette;
+  }
 
   ThemeData theme(ThemeGroupType themeGroupType) {
     if(themeGroupType == ThemeGroupType.MOM) {

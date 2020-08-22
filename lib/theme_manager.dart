@@ -11,31 +11,35 @@ import 'package:theme_manager/src/theme_group.dart';
 class ThemeManager extends ChangeNotifier {
 
   bool isDarkModeEnabled = false;
-  ColorPalette _colorPalette = ColorPalette();
-  ThemeGroup _darkThemeGroup = DarkThemeGroup(ColorPalette());
-  ThemeGroup _lightThemeGroup = LightThemeGroup(ColorPalette());
+  //ColorPalette _colorPalette = PinkPalette();
+  ThemeGroup _darkThemeGroup = DarkThemeGroup();//ColorPalette()
+  ThemeGroup _lightThemeGroup = LightThemeGroup();//ColorPalette()
 
-  ThemeManager({colorPalette}) {
-    _colorPalette = colorPalette;
-    _darkThemeGroup.colorPalette = colorPalette;
-    _lightThemeGroup.colorPalette = colorPalette;
+  ThemeManager() {//{colorPalette}
+    //_colorPalette = colorPalette != null ? colorPalette : _colorPalette;
+    //_darkThemeGroup.colorPalette = colorPalette;
+    //_lightThemeGroup.colorPalette = colorPalette;
+    //colorPalette(GreenPalette());
+    updateColorPalette(new PinkPalette());
+    print("Initilized Theme Manager");
   }
 
-  get colorPalette => _colorPalette;
-
-  set colorPalette(ColorPalette colorPalette) {
-    this.colorPalette = colorPalette;
-    _darkThemeGroup.colorPalette = colorPalette;
-    _lightThemeGroup.colorPalette = colorPalette;
+  updateColorPalette(ColorPalette colorPalette) {
+    //_colorPalette = colorPalette;
+    _darkThemeGroup.updateColorPalette(colorPalette);
+    _lightThemeGroup.updateColorPalette(colorPalette);
+    print("Set colorPalette in Theme Manager");
     notifyListeners();
   }
   
   void updateDarkModeEnabled(bool isDarkModeEnabled) {
     this.isDarkModeEnabled = isDarkModeEnabled;
+    print("Update DarkMode enabled in Theme manager");
     notifyListeners();
   }
 
   getTheme(ThemeGroupType type) {
+    print("Get theme in Theme Manager");
     return isDarkModeEnabled ? _darkThemeGroup.theme(type) : _lightThemeGroup.theme(type);
   }
 
