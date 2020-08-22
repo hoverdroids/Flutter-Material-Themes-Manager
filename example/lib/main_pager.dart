@@ -17,9 +17,9 @@ class _MainPagerState extends State<MainPager> {
   //what you'd expect (ie primary cards on white/black bg)
   //inverted (ie white/black cards on primary bg)
   var _pages = [
-    ListItemsPage(themeGroupType: ThemeGroupType.MOM),
+    //ListItemsPage(themeGroupType: ThemeGroupType.MOM),
     ListItemsPage(themeGroupType: ThemeGroupType.POM),
-    ListItemsPage(themeGroupType: ThemeGroupType.SOM),
+    //ListItemsPage(themeGroupType: ThemeGroupType.SOM),
   ];
   var _pageController = PageController();
 
@@ -48,7 +48,7 @@ class _MainPagerState extends State<MainPager> {
         },
         controller: _pageController,
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      /*bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('List on Main Color')),
           BottomNavigationBarItem(icon: Icon(Icons.photo), title: Text('List on Primary Color')),
@@ -64,7 +64,7 @@ class _MainPagerState extends State<MainPager> {
             );
           });
         },
-      ),
+      ),*/
     );
   }
 }

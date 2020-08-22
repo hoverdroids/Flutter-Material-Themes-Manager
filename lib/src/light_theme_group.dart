@@ -5,17 +5,11 @@ import 'package:theme_manager/theme_manager.dart';
 
 class LightThemeGroup extends ThemeGroup {
 
-  //LightThemeGroup([colorPalette]) : super(colorPalette);
-  //ColorPalette colorPalette = ColorPalette();
-
-  //@override
-  //ColorPalette colorPalette = PinkPalette();
-
   @override
   ThemeData mainOnMain() {
     return ThemeData(
       cardTheme: CardTheme(
-        color: Colors.red//this.colorPalette.mainLight,
+        color: this.colorPalette.lightFg,
       ),
     );
   }
@@ -24,8 +18,9 @@ class LightThemeGroup extends ThemeGroup {
   ThemeData primaryOnMain() {
     print("POM colorPalette null:${this.colorPalette == null ? "TRUE" : "FALSE"}");
     return ThemeData(
+      scaffoldBackgroundColor: colorPalette.primary,
       cardTheme: CardTheme(
-        color: this.colorPalette.primary,
+        color: colorPalette.primary,
       ),
     );
   }

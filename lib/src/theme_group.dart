@@ -5,7 +5,7 @@ import '../theme_manager.dart';
 
 abstract class ThemeGroup {
 
-  ColorPalette colorPalette = GreenPalette();
+  ColorPalette colorPalette = ColorPalette();
 
   void updateColorPalette(ColorPalette colorPalette) {
     this.colorPalette = colorPalette;

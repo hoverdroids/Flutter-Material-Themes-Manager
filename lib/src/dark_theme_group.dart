@@ -5,27 +5,36 @@ import 'color_palettes.dart';
 
 class DarkThemeGroup extends ThemeGroup {
 
-  //DarkThemeGroup([colorPalette]) : super(colorPalette);
-  //ColorPalette colorPalette = ColorPalette();
-
   @override
   ThemeData mainOnMain() {
     return ThemeData(
-      scaffoldBackgroundColor: Colors.black,
+      scaffoldBackgroundColor: colorPalette.darkBg,
+      cardTheme: CardTheme(
+        color: this.colorPalette.darkFg,
+        //elevation: 24,
+      ),
     );
   }
 
   @override
   ThemeData primaryOnMain() {
     return ThemeData(
-      scaffoldBackgroundColor: Colors.black,
+      scaffoldBackgroundColor: colorPalette.darkBg,
+      cardTheme: CardTheme(
+        color: this.colorPalette.darkFg,
+        //elevation: 24,
+      ),
     );
   }
 
   @override
   ThemeData secondaryOnMain() {
     return ThemeData(
-      scaffoldBackgroundColor: Colors.black,
+      //scaffoldBackgroundColor: colorPalette.darkBg,
+      cardTheme: CardTheme(
+        color: this.colorPalette.darkFg,
+        //elevation: 24,
+      ),
     );
   }
 

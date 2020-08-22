@@ -20,7 +20,7 @@ class ThemeManager extends ChangeNotifier {
     //_darkThemeGroup.colorPalette = colorPalette;
     //_lightThemeGroup.colorPalette = colorPalette;
     //colorPalette(GreenPalette());
-    updateColorPalette(new PinkPalette());
+    //updateColorPalette(new PinkPalette());
     print("Initilized Theme Manager");
   }
 
@@ -74,6 +74,12 @@ enum ThemeGroupType {
   POI,  //PRIMARY_ON_IMAGE,
   SOI,  //SECONDARY_ON_IMAGE
 }
+
+enum ElevationLevel {
+  NONE, LOW, MEDIUM, HIGH, EXTREME
+}
+
+//0dp, 2dp, 6dp, 12dp, 24dp
 
 Widget title(String text, [ThemeGroupType type = ThemeGroupType.MOM]) {
   return Consumer<ThemeManager> (
