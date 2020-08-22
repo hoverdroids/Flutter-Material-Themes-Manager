@@ -1,20 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:theme_manager/src/color_palettes.dart';
 
-enum ThemeGroupType {
-  MOM,  //MAIN_ON_MAIN,         //e.g  Light mode with gray text, Dark mooe with white text
-  POM,  //PRIMARY_ON_MAIN,      //e.g. Light/Dark mode Primary color
-  SOM,  //SECONDARY_ON_MAIN,    //e.g. Light/Dark mode secondary color
-  MOP,  //MAIN_ON_PRIMARY,
-  POP,  //PRIMARY_ON_PRIMARY,
-  SOP,  //SECONDARY_ON_PRIMARY,
-  MOS,  //MAIN_ON_SECONDARY,
-  POS,  //PRIMARY_ON_SECONDARY,
-  SOS,  //SECONDARY_ON_SECONDARY,
-  MOI,  //MAIN_ON_IMAGE,
-  POI,  //PRIMARY_ON_IMAGE,
-  SOI,  //SECONDARY_ON_IMAGE
-}
+import '../theme_manager.dart';
 
 abstract class ThemeGroup {
 

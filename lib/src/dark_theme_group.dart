@@ -8,21 +8,21 @@ class DarkThemeGroup extends ThemeGroup {
   @override
   ThemeData mainOnMain() {
     return ThemeData(
-
+      scaffoldBackgroundColor: Colors.black,
     );
   }
 
   @override
   ThemeData primaryOnMain() {
     return ThemeData(
-
+      scaffoldBackgroundColor: Colors.black,
     );
   }
 
   @override
   ThemeData secondaryOnMain() {
     return ThemeData(
-
+      scaffoldBackgroundColor: Colors.black,
     );
   }
 
