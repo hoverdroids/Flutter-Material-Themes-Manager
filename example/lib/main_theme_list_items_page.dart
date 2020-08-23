@@ -14,7 +14,8 @@ class MainThemeListItemsPage extends StatelessWidget {
           //elevation: 0,//removes the shadow
           leading: ThemedIcon(Icons.menu, type: ThemeGroupType.MOP),
           actions: <Widget>[
-            Switch(
+            ThemedSwitch(
+              type: ThemeGroupType.MOP,
               value: Provider.of<ThemeManager>(context).isDarkModeEnabled,
               onChanged: (boolVal) {
                 Provider.of<ThemeManager>(context).updateDarkModeEnabled(boolVal);

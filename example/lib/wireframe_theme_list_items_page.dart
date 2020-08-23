@@ -14,7 +14,8 @@ class WireframeThemeListItemsPage extends StatelessWidget {
           //elevation: 0,//removes the shadow
           leading: ThemedIcon(Icons.menu, type: ThemeGroupType.MOM),
           actions: <Widget>[
-            Switch(
+            ThemedSwitch(
+              type: ThemeGroupType.MOM,
               value: Provider.of<ThemeManager>(context).isDarkModeEnabled,
               onChanged: (boolVal) {
                 Provider.of<ThemeManager>(context).updateDarkModeEnabled(boolVal);

@@ -39,6 +39,10 @@ class LightThemeGroup extends ThemeGroup {
       iconTheme: IconThemeData(
         color: colorPalette.lightText,
       ),
+      toggleableActiveColor : colorPalette.lightPrimaryContrast,
+      /*toggleButtonsTheme: ToggleButtonsThemeData(
+        //TODO - do we want to add more styling?
+      ),*/
     );
   }
 
@@ -74,6 +78,7 @@ class LightThemeGroup extends ThemeGroup {
       iconTheme: IconThemeData(
         color: colorPalette.primary,
       ),
+      toggleableActiveColor : colorPalette.primary,
     );
   }
 
@@ -116,6 +121,7 @@ class LightThemeGroup extends ThemeGroup {
       iconTheme: IconThemeData(
         color: colorPalette.lightPrimaryContrast,
       ),
+      toggleableActiveColor : colorPalette.lightPrimaryContrast,
     );
   }
 

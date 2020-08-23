@@ -39,6 +39,7 @@ class DarkThemeGroup extends ThemeGroup {
       iconTheme: IconThemeData(
         color: colorPalette.darkText,
       ),
+      toggleableActiveColor : colorPalette.darkPrimaryContrast,
     );
   }
 
@@ -74,6 +75,7 @@ class DarkThemeGroup extends ThemeGroup {
       iconTheme: IconThemeData(
         color: colorPalette.primary,
       ),
+      toggleableActiveColor : colorPalette.primary,
     );
   }
 
@@ -117,6 +119,7 @@ class DarkThemeGroup extends ThemeGroup {
       iconTheme: IconThemeData(
         color: colorPalette.darkPrimaryContrast,
       ),
+      toggleableActiveColor : colorPalette.darkPrimaryContrast,
     );
   }
 
