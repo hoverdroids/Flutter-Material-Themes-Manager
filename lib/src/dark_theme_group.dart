@@ -27,6 +27,9 @@ class DarkThemeGroup extends ThemeGroup {
           color: colorPalette.darkText,
         ),
       ),
+      iconTheme: IconThemeData(
+        color: colorPalette.darkText,
+      ),
     );
   }
 
@@ -51,6 +54,9 @@ class DarkThemeGroup extends ThemeGroup {
         subtitle2: TextStyle(
           color: colorPalette.primary,
         ),
+      ),
+      iconTheme: IconThemeData(
+        color: colorPalette.primary,
       ),
     );
   }

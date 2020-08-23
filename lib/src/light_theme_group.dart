@@ -26,6 +26,9 @@ class LightThemeGroup extends ThemeGroup {
           color: colorPalette.lightText,
         ),
       ),
+      iconTheme: IconThemeData(
+        color: colorPalette.lightText,
+      ),
     );
   }
 
@@ -51,81 +54,37 @@ class LightThemeGroup extends ThemeGroup {
           color: colorPalette.primary,
         ),
       ),
+      iconTheme: IconThemeData(
+        color: colorPalette.primary,
+      ),
     );
   }
 
   @override
   ThemeData secondaryOnMain() {
     return ThemeData(
-      /*cardTheme: CardTheme(
-        color: this.colorPalette.secondary,
-      ),*/
-      textTheme: TextTheme(
-        //title
-        headline6: TextStyle(
-          color: Colors.white,
-        ),
-        subtitle1: TextStyle(
-          color: Colors.white70,
-        ),
-        subtitle2: TextStyle(
-          color: Colors.white70,
-        ),
-      ),
+
     );
   }
 
   @override
   ThemeData mainOnPrimary() {
     return ThemeData(
-      textTheme: TextTheme(
-        //title
-        headline6: TextStyle(
-          color: Colors.white,
-        ),
-        subtitle1: TextStyle(
-          color: Colors.white70,
-        ),
-        subtitle2: TextStyle(
-          color: Colors.white70,
-        ),
-      ),
+
     );
   }
 
   @override
   ThemeData primaryOnPrimary() {
     return ThemeData(
-      textTheme: TextTheme(
-        //title
-        headline6: TextStyle(
-          color: Colors.white,
-        ),
-        subtitle1: TextStyle(
-          color: Colors.white70,
-        ),
-        subtitle2: TextStyle(
-          color: Colors.white70,
-        ),
-      ),
+
     );
   }
 
   @override
   ThemeData secondaryOnPrimary() {
     return ThemeData(
-      textTheme: TextTheme(
-        //title
-        headline6: TextStyle(
-          color: Colors.white,
-        ),
-        subtitle1: TextStyle(
-          color: Colors.white70,
-        ),
-        subtitle2: TextStyle(
-          color: Colors.white70,
-        ),
-      ),
+
     );
   }
 
