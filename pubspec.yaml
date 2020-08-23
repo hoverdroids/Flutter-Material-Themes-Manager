@@ -1,8 +1,7 @@
 name: theme_manager
-description: A new Flutter package.
+description: An easier and standardized way to manage flutter app themes.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/hoverdroids/Flutter-Theme-Manager
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
