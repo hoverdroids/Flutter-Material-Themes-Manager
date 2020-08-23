@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theme_manager/theme_manager.dart';
-import 'list_items_page.dart';
+import 'main_theme_list_items_page.dart';
 
 class MainPager extends StatefulWidget {
   MainPager({Key key}) : super(key: key);
@@ -17,9 +17,7 @@ class _MainPagerState extends State<MainPager> {
   //what you'd expect (ie primary cards on white/black bg)
   //inverted (ie white/black cards on primary bg)
   var _pages = [
-    //ListItemsPage(themeGroupType: ThemeGroupType.MOM),
-    ListItemsPage(themeGroupType: ThemeGroupType.POM),
-    //ListItemsPage(themeGroupType: ThemeGroupType.SOM),
+    MainThemeListItemsPage(),
   ];
   var _pageController = PageController();
 

@@ -4,18 +4,22 @@ import 'package:flutter/material.dart';
 class ColorPalette {
   Color lightBg = Colors.white;
   Color lightFg = Colors.white70;
+  Color lightText = Colors.grey;
+  Color lightTextImportant = Colors.grey[800];
 
   Color darkBg = Colors.black;
-  Color darkFg = Colors.white70;
+  Color darkFg = Colors.grey[800];
+  Color darkText = Colors.white70;
+  Color darkTextImportant = Colors.white;
 
-  Color primary = Colors.brown;
-  Color secondary = Colors.brown;
+  Color primary;
+  Color secondary;
 
   ColorPalette({
     //this.mainLight = Colors.white, TODO - add the remaining fields to the constructor
     //this.mainDark = Colors.black,
-    this.primary = Colors.brown,
-    this.secondary = Colors.brown
+    this.primary = Colors.deepPurple,
+    this.secondary = Colors.deepPurple
   });
 
   ColorPalette.defaults();

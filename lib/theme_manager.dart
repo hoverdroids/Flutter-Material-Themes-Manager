@@ -150,6 +150,7 @@ class ThemedTitle extends ThemedText {
   ThemedTitle(text, {key, type, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
   : super(text,
       key: key,
+      type: type,
       strutStyle: strutStyle,
       textAlign: textAlign,
       textDirection: textDirection,
@@ -175,6 +176,7 @@ class ThemedSubTitle extends ThemedText {
   ThemedSubTitle(text, {key, type, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
       : super(text,
       key: key,
+      type: type,
       strutStyle: strutStyle,
       textAlign: textAlign,
       textDirection: textDirection,
@@ -200,6 +202,7 @@ class ThemedSubTitle2 extends ThemedText {
   ThemedSubTitle2(text, {key, type, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
       : super(text,
       key: key,
+      type: type,
       strutStyle: strutStyle,
       textAlign: textAlign,
       textDirection: textDirection,

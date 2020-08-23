@@ -7,20 +7,49 @@ class LightThemeGroup extends ThemeGroup {
 
   @override
   ThemeData mainOnMain() {
+    //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
+    bool important = true;
+
     return ThemeData(
-      cardTheme: CardTheme(
+      /*cardTheme: CardTheme(
         color: this.colorPalette.lightFg,
+      ),*/
+      textTheme: TextTheme(
+        headline6: TextStyle(//title
+          color: important ? colorPalette.lightTextImportant : colorPalette.lightText,
+          fontWeight: important ? FontWeight.bold : FontWeight.normal
+        ),
+        subtitle1: TextStyle(
+          color: colorPalette.lightText,
+        ),
+        subtitle2: TextStyle(
+          color: colorPalette.lightText,
+        ),
       ),
     );
   }
 
   @override
   ThemeData primaryOnMain() {
-    print("POM colorPalette null:${this.colorPalette == null ? "TRUE" : "FALSE"}");
+    //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
+    bool important = true;
+
     return ThemeData(
-      scaffoldBackgroundColor: colorPalette.primary,
+      /*scaffoldBackgroundColor: colorPalette.primary,
       cardTheme: CardTheme(
         color: colorPalette.primary,
+      ),*/
+      textTheme: TextTheme(
+        headline6: TextStyle(//title
+          color: colorPalette.primary,
+            fontWeight: important ? FontWeight.bold : FontWeight.normal
+        ),
+        subtitle1: TextStyle(
+          color: colorPalette.primary,
+        ),
+        subtitle2: TextStyle(
+          color: colorPalette.primary,
+        ),
       ),
     );
   }
@@ -28,8 +57,20 @@ class LightThemeGroup extends ThemeGroup {
   @override
   ThemeData secondaryOnMain() {
     return ThemeData(
-      cardTheme: CardTheme(
+      /*cardTheme: CardTheme(
         color: this.colorPalette.secondary,
+      ),*/
+      textTheme: TextTheme(
+        //title
+        headline6: TextStyle(
+          color: Colors.white,
+        ),
+        subtitle1: TextStyle(
+          color: Colors.white70,
+        ),
+        subtitle2: TextStyle(
+          color: Colors.white70,
+        ),
       ),
     );
   }
@@ -37,21 +78,54 @@ class LightThemeGroup extends ThemeGroup {
   @override
   ThemeData mainOnPrimary() {
     return ThemeData(
-
+      textTheme: TextTheme(
+        //title
+        headline6: TextStyle(
+          color: Colors.white,
+        ),
+        subtitle1: TextStyle(
+          color: Colors.white70,
+        ),
+        subtitle2: TextStyle(
+          color: Colors.white70,
+        ),
+      ),
     );
   }
 
   @override
   ThemeData primaryOnPrimary() {
     return ThemeData(
-
+      textTheme: TextTheme(
+        //title
+        headline6: TextStyle(
+          color: Colors.white,
+        ),
+        subtitle1: TextStyle(
+          color: Colors.white70,
+        ),
+        subtitle2: TextStyle(
+          color: Colors.white70,
+        ),
+      ),
     );
   }
 
   @override
   ThemeData secondaryOnPrimary() {
     return ThemeData(
-
+      textTheme: TextTheme(
+        //title
+        headline6: TextStyle(
+          color: Colors.white,
+        ),
+        subtitle1: TextStyle(
+          color: Colors.white70,
+        ),
+        subtitle2: TextStyle(
+          color: Colors.white70,
+        ),
+      ),
     );
   }
 
