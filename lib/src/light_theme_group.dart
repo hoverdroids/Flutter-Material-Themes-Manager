@@ -11,6 +11,16 @@ class LightThemeGroup extends ThemeGroup {
     bool important = true;
 
     return ThemeData(
+      appBarTheme: AppBarTheme(
+        color: colorPalette.lightBg,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: important ? colorPalette.lightTextImportant : colorPalette.lightText,
+        ),*/
+        textTheme: TextTheme(
+
+        ),
+      ),
       /*cardTheme: CardTheme(
         color: this.colorPalette.lightFg,
       ),*/
@@ -42,6 +52,13 @@ class LightThemeGroup extends ThemeGroup {
       cardTheme: CardTheme(
         color: colorPalette.primary,
       ),*/
+      appBarTheme: AppBarTheme(
+        color: colorPalette.primary,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: Colors.white,
+        ),*/
+      ),
       textTheme: TextTheme(
         headline6: TextStyle(//title
           color: colorPalette.primary,
@@ -69,8 +86,36 @@ class LightThemeGroup extends ThemeGroup {
 
   @override
   ThemeData mainOnPrimary() {
+    //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
+    bool important = true;
     return ThemeData(
-
+      appBarTheme: AppBarTheme(
+        color: colorPalette.lightBg,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: important ? colorPalette.lightTextImportant : colorPalette.lightText,
+        ),
+        textTheme: TextTheme(
+        ),*/
+      ),
+      /*cardTheme: CardTheme(
+        color: this.colorPalette.lightFg,
+      ),*/
+      textTheme: TextTheme(
+        headline6: TextStyle(//title
+            color: important ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: important ? FontWeight.bold : FontWeight.normal
+        ),
+        subtitle1: TextStyle(
+          color: colorPalette.lightPrimaryContrast,
+        ),
+        subtitle2: TextStyle(
+          color: colorPalette.lightPrimaryContrast,
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: colorPalette.lightPrimaryContrast,
+      ),
     );
   }
 

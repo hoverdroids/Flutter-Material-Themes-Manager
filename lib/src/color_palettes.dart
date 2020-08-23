@@ -6,11 +6,16 @@ class ColorPalette {
   Color lightFg = Colors.white70;
   Color lightText = Colors.grey;
   Color lightTextImportant = Colors.grey[800];
+  Color lightPrimaryContrast = Colors.white70;
+  Color lightPrimaryContrastImportant = Colors.white;
 
   Color darkBg = Colors.black;
   Color darkFg = Colors.grey[800];
   Color darkText = Colors.white70;
   Color darkTextImportant = Colors.white;
+  Color darkPrimaryContras = Colors.white;
+  Color darkPrimaryContrast = Colors.grey[800];
+  Color darkPrimaryContrastImportant = Colors.black;
 
   Color primary;
   Color secondary;

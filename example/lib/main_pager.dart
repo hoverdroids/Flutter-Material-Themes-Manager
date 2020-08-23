@@ -25,9 +25,10 @@ class _MainPagerState extends State<MainPager> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Theme Manager Demo'),
+        backgroundColor: Provider.of<ThemeManager>(context).getTheme(ThemeGroupType.POM).appBarTheme.color,//TODO - clunky but it's hard to subclass appbar
+        title: ThemedTitle('Flutter Theme Manager Demo', type: ThemeGroupType.MOP),
         //elevation: 0,//removes the shadow
-        leading: Icon(Icons.menu),
+        leading: ThemedIcon(Icons.menu, type: ThemeGroupType.MOP),
         actions: <Widget>[
           Switch(
             value: Provider.of<ThemeManager>(context).isDarkModeEnabled,
