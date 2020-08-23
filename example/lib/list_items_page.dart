@@ -17,10 +17,10 @@ class ListItemsPage extends StatelessWidget {
               return Card(
                 elevation: 0,
                 child: ListTile(
-                  title: title("Title $pos", themeGroupType),
-                  subtitle: subTitle("SubTitle $pos", themeGroupType),
-                  leading: icon(Icons.alarm, themeGroupType),
-                  trailing: icon(Icons.chevron_right, themeGroupType),
+                  title: ThemedTitle("Title $pos", type: themeGroupType),
+                  subtitle: ThemedSubTitle("SubTitle $pos", type:themeGroupType),
+                  leading: ThemedIcon(Icons.alarm, type:themeGroupType),
+                  trailing: ThemedIcon(Icons.chevron_right, type:themeGroupType),
                 ),
               );
             },

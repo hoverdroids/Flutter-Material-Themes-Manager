@@ -1,6 +1,5 @@
 library theme_manager;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theme_manager/src/color_palettes.dart';
@@ -38,7 +37,7 @@ class ThemeManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  getTheme(ThemeGroupType type) {
+  ThemeData getTheme(ThemeGroupType type) {
     print("Get theme in Theme Manager");
     return isDarkModeEnabled ? _darkThemeGroup.theme(type) : _lightThemeGroup.theme(type);
   }
@@ -81,46 +80,171 @@ enum ElevationLevel {
 
 //0dp, 2dp, 6dp, 12dp, 24dp
 
-Widget title(String text, [ThemeGroupType type = ThemeGroupType.MOM]) {
-  return Consumer<ThemeManager> (
-    builder: (context, themeManager, child) {
-      return Text(
-        text,
-        style: themeManager.getTheme(type).textTheme.headline6,//title was depricated
-      );
-    },
+
+abstract class ThemedText extends StatelessWidget {
+
+  final String text;
+  final Key key;
+  final ThemeGroupType type;
+  final StrutStyle strutStyle;
+  final TextAlign textAlign;
+  final TextDirection textDirection;
+  final Locale locale;
+  final bool softWrap;
+  final TextOverflow overflow;
+  final double textScaleFactor;
+  final int maxLines;
+  final String semanticsLabel;
+  final TextWidthBasis textWidthBasis;
+  final TextHeightBehavior textHeightBehavior;
+
+  ThemedText(this.text,
+    {
+      this.key,
+      this.type = ThemeGroupType.MOM,
+      this.strutStyle,
+      this.textAlign,
+      this.textDirection,
+      this.locale,
+      this.softWrap,
+      this.overflow,
+      this.textScaleFactor,
+      this.maxLines,
+      this.semanticsLabel,
+      this.textWidthBasis,
+      this.textHeightBehavior
+    }
   );
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<ThemeManager> (
+      builder: (context, themeManager, child) {
+        return Text(
+          text,
+          key: key,
+          style: getTextStyle(themeManager.getTheme(type)),
+          strutStyle: strutStyle,
+          textAlign: textAlign,
+          textDirection: textDirection,
+          locale: locale,
+          softWrap: softWrap,
+          overflow: overflow,
+          textScaleFactor: textScaleFactor,
+          maxLines: maxLines,
+          semanticsLabel: semanticsLabel,
+          textWidthBasis: textWidthBasis,
+          textHeightBehavior: textHeightBehavior
+        );
+      },
+    );
+  }
+
+  //Subclasses just need to override this for magic pants to appear :p
+  TextStyle getTextStyle(ThemeData themeData);
+
 }
 
-Widget subTitle(String text, [ThemeGroupType type = ThemeGroupType.MOM]) {
-  return Consumer<ThemeManager> (
-    builder: (context, themeManager, child) {
-      return Text(
-        text,
-        style: themeManager.getTheme(type).textTheme.subtitle1,
-      );
-    },
+class ThemedTitle extends ThemedText {
+
+  ThemedTitle(text, {key, type, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
+  : super(text,
+      key: key,
+      strutStyle: strutStyle,
+      textAlign: textAlign,
+      textDirection: textDirection,
+      locale: locale,
+      softWrap: softWrap,
+      overflow: overflow,
+      textScaleFactor: textScaleFactor,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      textWidthBasis: textWidthBasis,
+      textHeightBehavior:textHeightBehavior
   );
+
+  @override
+  TextStyle getTextStyle(ThemeData themeData) {
+    return themeData.textTheme.headline6;//title was depricated
+  }
+
 }
 
-Widget subTitle2(String text, [ThemeGroupType type = ThemeGroupType.MOM]) {
-  return Consumer<ThemeManager> (
-    builder: (context, themeManager, child) {
-      return Text(
-        text,
-        style: themeManager.getTheme(type).textTheme.subtitle2,
-      );
-    },
+class ThemedSubTitle extends ThemedText {
+
+  ThemedSubTitle(text, {key, type, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
+      : super(text,
+      key: key,
+      strutStyle: strutStyle,
+      textAlign: textAlign,
+      textDirection: textDirection,
+      locale: locale,
+      softWrap: softWrap,
+      overflow: overflow,
+      textScaleFactor: textScaleFactor,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      textWidthBasis: textWidthBasis,
+      textHeightBehavior:textHeightBehavior
   );
+
+  @override
+  TextStyle getTextStyle(ThemeData themeData) {
+    return themeData.textTheme.subtitle1;//title was depricated
+  }
+
 }
 
-Widget icon(IconData icon, [ThemeGroupType type = ThemeGroupType.MOM]) {
-  return Consumer<ThemeManager> (
-    builder: (context, themeManager, child) {
-      return Icon(
-        icon,
-        color: themeManager.getTheme(type).iconTheme.color,
-      );
-    },
+class ThemedSubTitle2 extends ThemedText {
+
+  ThemedSubTitle2(text, {key, type, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
+      : super(text,
+      key: key,
+      strutStyle: strutStyle,
+      textAlign: textAlign,
+      textDirection: textDirection,
+      locale: locale,
+      softWrap: softWrap,
+      overflow: overflow,
+      textScaleFactor: textScaleFactor,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      textWidthBasis: textWidthBasis,
+      textHeightBehavior:textHeightBehavior
   );
+
+  @override
+  TextStyle getTextStyle(ThemeData themeData) {
+    return themeData.textTheme.subtitle2;
+  }
+
+}
+
+enum IconSize {
+  SMALL, DEFAULT, LARGE
+}
+
+class ThemedIcon extends StatelessWidget {
+
+  final IconData icon;
+  final Key key;
+  final IconSize iconSize;
+  final ThemeGroupType type;
+  final String semanticLabel;
+  final TextDirection textDirection;
+
+  ThemedIcon(this.icon, {this.key, this.iconSize, this.type  = ThemeGroupType.MOM, this.semanticLabel, this.textDirection});
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<ThemeManager> (
+      builder: (context, themeManager, child) {
+        //TODO - pass the fields to the widget, but first ensure that we're not accidentally breaking things with null fields
+        return Icon(
+          icon,
+          color: themeManager.getTheme(type).iconTheme.color,
+        );
+      },
+    );
+  }
 }
