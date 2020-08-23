@@ -3,16 +3,16 @@ import 'package:theme_manager/theme_manager.dart';
 import 'package:provider/provider.dart';
 
 //This will appear as the user expects with standard theming in light/dark (e.g. white/black bg with colors on buttons and titles, all else are greys)
-class MainThemeListItemsPage extends StatelessWidget {
-
+class WireframeThemeListItemsPage extends StatelessWidget {
+  //TODO - there will be no difference between wirefram and grayscale without a palette change that uses borders instead of fills
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Provider.of<ThemeManager>(context).getTheme(ThemeGroupType.POM).appBarTheme.color,//TODO - clunky but it's hard to subclass appbar
-          title: ThemedTitle('Primary on Main', type: ThemeGroupType.MOP),
+          backgroundColor: Provider.of<ThemeManager>(context).getTheme(ThemeGroupType.MOM).appBarTheme.color,//TODO - clunky but it's hard to subclass appbar
+          title: ThemedTitle('WireFrame', type: ThemeGroupType.MOM),
           //elevation: 0,//removes the shadow
-          leading: ThemedIcon(Icons.menu, type: ThemeGroupType.MOP),
+          leading: ThemedIcon(Icons.menu, type: ThemeGroupType.MOM),
           actions: <Widget>[
             Switch(
               value: Provider.of<ThemeManager>(context).isDarkModeEnabled,
@@ -29,7 +29,7 @@ class MainThemeListItemsPage extends StatelessWidget {
               return Card(
                 elevation: 0,
                 child: ListTile(
-                  title: ThemedTitle("Title $pos", type: ThemeGroupType.POM),
+                  title: ThemedTitle("Title $pos", type: ThemeGroupType.MOM),
                   subtitle: ThemedSubTitle("SubTitle $pos", type: ThemeGroupType.MOM),
                   leading: ThemedIcon(Icons.alarm, type: ThemeGroupType.MOM),
                   trailing: ThemedIcon(Icons.chevron_right, type: ThemeGroupType.MOM),

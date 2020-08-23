@@ -19,7 +19,7 @@ class ThemeManager extends ChangeNotifier {
     //_darkThemeGroup.colorPalette = colorPalette;
     //_lightThemeGroup.colorPalette = colorPalette;
     //colorPalette(GreenPalette());
-    //updateColorPalette(new PinkPalette());
+    updateColorPalette(new PinkPalette());
     print("Initilized Theme Manager");
   }
 

@@ -26,8 +26,6 @@ class ColorPalette {
     this.primary = Colors.deepPurple,
     this.secondary = Colors.deepPurple
   });
-
-  ColorPalette.defaults();
 }
 
 //TODO - add a colorPalette for all base MaterialThemes and allow users to extend/create their own from there

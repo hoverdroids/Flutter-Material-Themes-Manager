@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theme_manager/theme_manager.dart';
 import 'main_theme_list_items_page.dart';
+import 'wireframe_theme_list_items_page.dart';
+import 'grayscale_theme_list_items_page.dart';
 
 class MainPager extends StatefulWidget {
   MainPager({Key key}) : super(key: key);
@@ -17,27 +19,16 @@ class _MainPagerState extends State<MainPager> {
   //what you'd expect (ie primary cards on white/black bg)
   //inverted (ie white/black cards on primary bg)
   var _pages = [
+    WireframeThemeListItemsPage(),
+    GrayscaleThemeListItemsPage(),
     MainThemeListItemsPage(),
   ];
   var _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
+    //TODO - each page needs its own appbar and navbar to prove the point
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Provider.of<ThemeManager>(context).getTheme(ThemeGroupType.POM).appBarTheme.color,//TODO - clunky but it's hard to subclass appbar
-        title: ThemedTitle('Flutter Theme Manager Demo', type: ThemeGroupType.MOP),
-        //elevation: 0,//removes the shadow
-        leading: ThemedIcon(Icons.menu, type: ThemeGroupType.MOP),
-        actions: <Widget>[
-          Switch(
-            value: Provider.of<ThemeManager>(context).isDarkModeEnabled,
-            onChanged: (boolVal) {
-              Provider.of<ThemeManager>(context).updateDarkModeEnabled(boolVal);
-            },
-          )
-        ],
-      ),
       body: PageView(
         children: _pages,
         onPageChanged: (index){
