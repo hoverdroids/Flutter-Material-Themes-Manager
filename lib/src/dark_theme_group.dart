@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theme_manager/src/theme_group.dart';
+import 'package:material_themes_manager/src/theme_group.dart';
 
 import 'color_palettes.dart';
 

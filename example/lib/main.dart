@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theme_manager/theme_manager.dart';
+import 'package:material_themes_manager/material_themes_manager.dart';
 import 'main_pager.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider<ThemeManager>(
-      builder: (context) => ThemeManager(),
+    ChangeNotifierProvider<MaterialThemesManager>(
+      builder: (context) => MaterialThemesManager(),
       child: HomeApp(),
     ),
   );
@@ -17,7 +17,7 @@ class HomeApp extends StatelessWidget {
   //affects every widget's appearance in the app
   @override
   Widget build(BuildContext context) {
-    return Consumer<ThemeManager>(
+    return Consumer<MaterialThemesManager>(
         builder: (context, themeManager, child){
           return MaterialApp(
             title: "Theme Manager Demo",

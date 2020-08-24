@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:theme_manager/src/color_palettes.dart';
-import 'package:theme_manager/src/theme_group.dart';
-import 'package:theme_manager/theme_manager.dart';
+import 'package:material_themes_manager/src/color_palettes.dart';
+import 'package:material_themes_manager/src/theme_group.dart';
+import 'package:material_themes_manager/material_themes_manager.dart';
 
 class LightThemeGroup extends ThemeGroup {
 

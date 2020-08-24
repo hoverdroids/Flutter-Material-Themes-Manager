@@ -1,7 +1,7 @@
-name: theme_manager
+name: material_themes_manager
 description: An easier and standardized way to manage flutter app themes.
-version: 0.0.1
-homepage: https://github.com/hoverdroids/Flutter-Theme-Manager
+version: 0.0.3
+homepage: https://github.com/hoverdroids/Flutter-Material-Themes-Manager
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

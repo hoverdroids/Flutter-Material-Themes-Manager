@@ -1,4 +1,4 @@
-# theme_manager
+# material_themes_manager
 
 A new Flutter package.
 

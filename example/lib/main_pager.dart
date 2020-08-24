@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theme_manager/theme_manager.dart';
+import 'package:material_themes_manager/material_themes_manager.dart';
 import 'main_theme_list_items_page.dart';
 import 'wireframe_theme_list_items_page.dart';
 import 'grayscale_theme_list_items_page.dart';

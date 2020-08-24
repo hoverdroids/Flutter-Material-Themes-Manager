@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theme_manager/theme_manager.dart';
+import 'package:material_themes_manager/material_themes_manager.dart';
 import 'package:provider/provider.dart';
 
 //This will appear as the user expects with standard theming in light/dark (e.g. white/black bg with colors on buttons and titles, all else are greys)
@@ -9,16 +9,16 @@ class MainThemeListItemsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Provider.of<ThemeManager>(context).getTheme(ThemeGroupType.POM).appBarTheme.color,//TODO - clunky but it's hard to subclass appbar
+          backgroundColor: Provider.of<MaterialThemesManager>(context).getTheme(ThemeGroupType.POM).appBarTheme.color,//TODO - clunky but it's hard to subclass appbar
           title: ThemedTitle('Primary on Main', type: ThemeGroupType.MOP),
           //elevation: 0,//removes the shadow
           leading: ThemedIcon(Icons.menu, type: ThemeGroupType.MOP),
           actions: <Widget>[
             ThemedSwitch(
               type: ThemeGroupType.MOP,
-              value: Provider.of<ThemeManager>(context).isDarkModeEnabled,
+              value: Provider.of<MaterialThemesManager>(context).isDarkModeEnabled,
               onChanged: (boolVal) {
-                Provider.of<ThemeManager>(context).updateDarkModeEnabled(boolVal);
+                Provider.of<MaterialThemesManager>(context).updateDarkModeEnabled(boolVal);
               },
             )
           ],

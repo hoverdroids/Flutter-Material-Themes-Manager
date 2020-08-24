@@ -1,22 +1,22 @@
-library theme_manager;
+library material_themes_manager;
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
-import 'package:theme_manager/src/color_palettes.dart';
-import 'package:theme_manager/src/dark_theme_group.dart';
-import 'package:theme_manager/src/light_theme_group.dart';
-import 'package:theme_manager/src/theme_group.dart';
+import 'package:material_themes_manager/src/color_palettes.dart';
+import 'package:material_themes_manager/src/dark_theme_group.dart';
+import 'package:material_themes_manager/src/light_theme_group.dart';
+import 'package:material_themes_manager/src/theme_group.dart';
 
-class ThemeManager extends ChangeNotifier {
+class MaterialThemesManager extends ChangeNotifier {
 
   bool isDarkModeEnabled = false;
   //ColorPalette _colorPalette = PinkPalette();
   ThemeGroup _darkThemeGroup = DarkThemeGroup();//ColorPalette()
   ThemeGroup _lightThemeGroup = LightThemeGroup();//ColorPalette()
 
-  ThemeManager() {//{colorPalette}
+  MaterialThemesManager() {//{colorPalette}
     //_colorPalette = colorPalette != null ? colorPalette : _colorPalette;
     //_darkThemeGroup.colorPalette = colorPalette;
     //_lightThemeGroup.colorPalette = colorPalette;
@@ -219,8 +219,21 @@ bottomOpacity: bottomOpacity,);
   }
 }*/
 
+
+
+
+
+
+
+
+
+enum IconSize {
+  SMALL, DEFAULT, LARGE
+}
+
+
 class ThemedSwitch extends StatelessWidget {
-  
+
   final ThemeGroupType type;
   final Key key;
   final bool value;
@@ -240,7 +253,7 @@ class ThemedSwitch extends StatelessWidget {
   final hoverColor;
   final focusNode;
   final autofocus;
-  
+
   ThemedSwitch({
     this.key,
     @required this.value,
@@ -264,32 +277,64 @@ class ThemedSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ThemeManager> (
+    return Consumer<MaterialThemesManager> (
+        builder: (context, themeManager, child) {
+          //Construct a default widget in order to fall back on default values when the optional params aren't passed
+          var defaultSwitch = Switch(value: value, onChanged: onChanged);
+
+          return Switch(
+            key: key != null ? key : defaultSwitch.key,
+            value: value,
+            onChanged: onChanged,
+            activeColor: themeManager.getTheme(type).toggleableActiveColor,
+            activeTrackColor: activeTrackColor != null ? activeTrackColor : defaultSwitch.activeTrackColor,
+            inactiveThumbColor: inactiveThumbColor != null ? inactiveThumbColor : defaultSwitch.inactiveThumbColor,
+            inactiveTrackColor: inactiveTrackColor != null ? inactiveTrackColor : defaultSwitch.inactiveTrackColor,
+            activeThumbImage: activeThumbImage != null ? activeThumbImage : defaultSwitch.activeThumbImage,
+            onActiveThumbImageError: onActiveThumbImageError != null ? onActiveThumbImageError : defaultSwitch.onActiveThumbImageError,
+            inactiveThumbImage: inactiveThumbImage != null ? inactiveThumbImage : defaultSwitch.inactiveThumbImage,
+            onInactiveThumbImageError: onInactiveThumbImageError != null ? onInactiveThumbImageError : defaultSwitch.onInactiveThumbImageError,
+            materialTapTargetSize: materialTapTargetSize != null ? materialTapTargetSize : defaultSwitch.materialTapTargetSize,
+            dragStartBehavior: dragStartBehavior != null ? dragStartBehavior : defaultSwitch.dragStartBehavior,
+            mouseCursor: mouseCursor != null ? mouseCursor : defaultSwitch.mouseCursor,
+            focusColor: focusColor != null ? focusColor : defaultSwitch.focusColor,
+            hoverColor: hoverColor != null ? hoverColor : defaultSwitch.hoverColor,
+            focusNode: focusNode != null ? focusNode : defaultSwitch.focusNode,
+            autofocus: autofocus != null ? autofocus : defaultSwitch.autofocus,
+          );
+        }
+    );
+  }
+}
+
+class ThemedIcon extends StatelessWidget {
+
+  final IconData icon;
+  final Key key;
+  final double size;//TODO - break down by simple sizes vs pixels: IconSize iconSize;
+  final ThemeGroupType type;
+  final String semanticLabel;
+  final TextDirection textDirection;
+
+  ThemedIcon(this.icon, {this.type  = ThemeGroupType.MOM, this.key, this.size, this.semanticLabel, this.textDirection});
+
+  @override
+  Widget build(BuildContext context) {
+
+    //construct a default widget in order to fall back on default values when the optional params aren't passed
+    var defaultIcon = Icon(icon);
+
+    return Consumer<MaterialThemesManager> (
       builder: (context, themeManager, child) {
-        //Construct a default widget in order to fall back on default values when the optional params aren't passed
-        var defaultSwitch = Switch(value: value, onChanged: onChanged);
-        
-        return Switch(
-          key: key != null ? key : defaultSwitch.key,
-          value: value,
-          onChanged: onChanged,
-          activeColor: themeManager.getTheme(type).toggleableActiveColor,
-          activeTrackColor: activeTrackColor != null ? activeTrackColor : defaultSwitch.activeTrackColor,
-          inactiveThumbColor: inactiveThumbColor != null ? inactiveThumbColor : defaultSwitch.inactiveThumbColor,
-          inactiveTrackColor: inactiveTrackColor != null ? inactiveTrackColor : defaultSwitch.inactiveTrackColor,
-          activeThumbImage: activeThumbImage != null ? activeThumbImage : defaultSwitch.activeThumbImage,
-          onActiveThumbImageError: onActiveThumbImageError != null ? onActiveThumbImageError : defaultSwitch.onActiveThumbImageError,
-          inactiveThumbImage: inactiveThumbImage != null ? inactiveThumbImage : defaultSwitch.inactiveThumbImage,
-          onInactiveThumbImageError: onInactiveThumbImageError != null ? onInactiveThumbImageError : defaultSwitch.onInactiveThumbImageError,
-          materialTapTargetSize: materialTapTargetSize != null ? materialTapTargetSize : defaultSwitch.materialTapTargetSize,
-          dragStartBehavior: dragStartBehavior != null ? dragStartBehavior : defaultSwitch.dragStartBehavior,
-          mouseCursor: mouseCursor != null ? mouseCursor : defaultSwitch.mouseCursor,
-          focusColor: focusColor != null ? focusColor : defaultSwitch.focusColor,
-          hoverColor: hoverColor != null ? hoverColor : defaultSwitch.hoverColor,
-          focusNode: focusNode != null ? focusNode : defaultSwitch.focusNode,
-          autofocus: autofocus != null ? autofocus : defaultSwitch.autofocus,
+        return Icon(
+          icon,
+          key: key != null ? key : defaultIcon.key,
+          size: size != null ? size : defaultIcon.size,
+          color: themeManager.getTheme(type).iconTheme.color,
+          semanticLabel: semanticLabel != null ? semanticLabel : defaultIcon.semanticLabel,
+          textDirection: textDirection != null ? textDirection : defaultIcon.textDirection,
         );
-      }
+      },
     );
   }
 }
@@ -297,8 +342,8 @@ class ThemedSwitch extends StatelessWidget {
 abstract class ThemedText extends StatelessWidget {
 
   final String text;
-  final Key key;
   final ThemeGroupType type;
+  final Key key;
   final StrutStyle strutStyle;
   final TextAlign textAlign;
   final TextDirection textDirection;
@@ -312,42 +357,45 @@ abstract class ThemedText extends StatelessWidget {
   final TextHeightBehavior textHeightBehavior;
 
   ThemedText(this.text,
-    {
-      this.key,
-      this.type = ThemeGroupType.MOM,
-      this.strutStyle,
-      this.textAlign,
-      this.textDirection,
-      this.locale,
-      this.softWrap,
-      this.overflow,
-      this.textScaleFactor,
-      this.maxLines,
-      this.semanticsLabel,
-      this.textWidthBasis,
-      this.textHeightBehavior
-    }
-  );
+      {
+        this.type = ThemeGroupType.MOM,
+        this.key,
+        this.strutStyle,
+        this.textAlign,
+        this.textDirection,
+        this.locale,
+        this.softWrap,
+        this.overflow,
+        this.textScaleFactor,
+        this.maxLines,
+        this.semanticsLabel,
+        this.textWidthBasis,
+        this.textHeightBehavior
+      }
+      );
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ThemeManager> (
+
+    var defaultText = Text(text);
+
+    return Consumer<MaterialThemesManager> (
       builder: (context, themeManager, child) {
         return Text(
           text,
-          key: key,
+          key: key != null ? key: defaultText.key,
           style: getTextStyle(themeManager.getTheme(type)),
-          strutStyle: strutStyle,
-          textAlign: textAlign,
-          textDirection: textDirection,
-          locale: locale,
-          softWrap: softWrap,
-          overflow: overflow,
-          textScaleFactor: textScaleFactor,
-          maxLines: maxLines,
-          semanticsLabel: semanticsLabel,
-          textWidthBasis: textWidthBasis,
-          textHeightBehavior: textHeightBehavior
+          strutStyle: strutStyle != null ? strutStyle : defaultText.strutStyle,
+          textAlign: textAlign != null ? textAlign : defaultText.textAlign,
+          textDirection: textDirection != null ? textDirection : defaultText.textDirection,
+          locale: locale != null ? locale : defaultText.locale,
+          softWrap: softWrap != null ? softWrap: defaultText.softWrap,
+          overflow: overflow != null ? overflow: defaultText.overflow,
+          textScaleFactor: textScaleFactor != null ? textScaleFactor : defaultText.textScaleFactor,
+          maxLines: maxLines != null ? maxLines : defaultText.maxLines,
+          semanticsLabel: semanticsLabel != null ? semanticsLabel : defaultText.semanticsLabel,
+          textWidthBasis: textWidthBasis != null ? textWidthBasis : defaultText.textWidthBasis,
+          textHeightBehavior: textHeightBehavior != null ? textHeightBehavior : defaultText.textHeightBehavior,
         );
       },
     );
@@ -360,10 +408,11 @@ abstract class ThemedText extends StatelessWidget {
 
 class ThemedTitle extends ThemedText {
 
-  ThemedTitle(text, {key, type, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
-  : super(text,
-      key: key,
+  ThemedTitle(text, {type, key, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
+      : super(
+      text,
       type: type,
+      key: key,
       strutStyle: strutStyle,
       textAlign: textAlign,
       textDirection: textDirection,
@@ -387,9 +436,10 @@ class ThemedTitle extends ThemedText {
 class ThemedSubTitle extends ThemedText {
 
   ThemedSubTitle(text, {key, type, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
-      : super(text,
-      key: key,
+      : super(
+      text,
       type: type,
+      key: key,
       strutStyle: strutStyle,
       textAlign: textAlign,
       textDirection: textDirection,
@@ -413,9 +463,10 @@ class ThemedSubTitle extends ThemedText {
 class ThemedSubTitle2 extends ThemedText {
 
   ThemedSubTitle2(text, {key, type, strutStyle, textAlign, textDirection, locale, softWrap, overflow, textScaleFactor, maxLines, semanticsLabel, textWidthBasis, textHeightBehavior})
-      : super(text,
-      key: key,
+      : super(
+      text,
       type: type,
+      key: key,
       strutStyle: strutStyle,
       textAlign: textAlign,
       textDirection: textDirection,
@@ -434,36 +485,4 @@ class ThemedSubTitle2 extends ThemedText {
     return themeData.textTheme.subtitle2;
   }
 
-}
-
-enum IconSize {
-  SMALL, DEFAULT, LARGE
-}
-
-class ThemedIcon extends StatelessWidget {
-
-  final IconData icon;
-  final Key key;
-  final double size;//TODO - break down by simple sizes vs pixels: IconSize iconSize;
-  final ThemeGroupType type;
-  final String semanticLabel;
-  final TextDirection textDirection;
-
-  ThemedIcon(this.icon, {this.key, this.size, this.type  = ThemeGroupType.MOM, this.semanticLabel, this.textDirection});
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<ThemeManager> (
-      builder: (context, themeManager, child) {
-        return Icon(
-          icon,
-          key: key,
-          size: size,
-          color: themeManager.getTheme(type).iconTheme.color,
-          semanticLabel: semanticLabel,
-          textDirection: textDirection,
-        );
-      },
-    );
-  }
 }
