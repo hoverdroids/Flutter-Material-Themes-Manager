@@ -9,19 +9,19 @@ class LightThemeGroup extends ThemeGroup {
     bool important = true;
 
     return ThemeData(
+      scaffoldBackgroundColor: colorPalette.lightBg,
       appBarTheme: AppBarTheme(
         color: colorPalette.lightBg,
         //TODO - do we want to handle the icon theme or just pass in the appbar caller?
         /*iconTheme: IconThemeData(
           color: important ? colorPalette.lightTextImportant : colorPalette.lightText,
-        ),*/
-        textTheme: TextTheme(
-
         ),
+        textTheme: TextTheme(
+        ),*/
       ),
-      /*cardTheme: CardTheme(
+      cardTheme: CardTheme(
         color: this.colorPalette.lightFg,
-      ),*/
+      ),
       textTheme: TextTheme(
         headline6: TextStyle(//title
           color: important ? colorPalette.lightTextImportant : colorPalette.lightText,
@@ -50,16 +50,16 @@ class LightThemeGroup extends ThemeGroup {
     bool important = true;
 
     return ThemeData(
-      /*scaffoldBackgroundColor: colorPalette.primary,
-      cardTheme: CardTheme(
-        color: colorPalette.primary,
-      ),*/
+      scaffoldBackgroundColor: colorPalette.primary,
       appBarTheme: AppBarTheme(
         color: colorPalette.primary,
         //TODO - do we want to handle the icon theme or just pass in the appbar caller?
         /*iconTheme: IconThemeData(
           color: Colors.white,
         ),*/
+      ),
+      cardTheme: CardTheme(
+        color: colorPalette.primary,
       ),
       textTheme: TextTheme(
         headline6: TextStyle(//title
@@ -92,6 +92,7 @@ class LightThemeGroup extends ThemeGroup {
     //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
     bool important = true;
     return ThemeData(
+      scaffoldBackgroundColor: colorPalette.lightBg,
       appBarTheme: AppBarTheme(
         color: colorPalette.lightBg,
         //TODO - do we want to handle the icon theme or just pass in the appbar caller?
@@ -101,9 +102,9 @@ class LightThemeGroup extends ThemeGroup {
         textTheme: TextTheme(
         ),*/
       ),
-      /*cardTheme: CardTheme(
+      cardTheme: CardTheme(
         color: this.colorPalette.lightFg,
-      ),*/
+      ),
       textTheme: TextTheme(
         headline6: TextStyle(//title
             color: important ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,

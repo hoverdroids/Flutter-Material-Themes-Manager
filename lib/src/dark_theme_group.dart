@@ -46,7 +46,7 @@ class DarkThemeGroup extends ThemeGroup {
     //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
     bool important = true;
     return ThemeData(
-      scaffoldBackgroundColor: colorPalette.darkBg,
+      scaffoldBackgroundColor: colorPalette.primary,
       appBarTheme: AppBarTheme(
         color: colorPalette.primary,
         //TODO - do we want to handle the icon theme or just pass in the appbar caller?
@@ -55,7 +55,7 @@ class DarkThemeGroup extends ThemeGroup {
         ),*/
       ),
       cardTheme: CardTheme(
-        color: this.colorPalette.darkFg,
+        color: this.colorPalette.primary,
         //elevation: 24,
       ),
       textTheme: TextTheme(
@@ -80,9 +80,12 @@ class DarkThemeGroup extends ThemeGroup {
   @override
   ThemeData secondaryOnMain() {
     return ThemeData(
-      //scaffoldBackgroundColor: colorPalette.darkBg,
+      scaffoldBackgroundColor: colorPalette.secondary,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.secondary,
+      ),
       cardTheme: CardTheme(
-        color: this.colorPalette.darkFg,
+        color: this.colorPalette.secondary,
         //elevation: 24,
       ),
     );
@@ -93,6 +96,7 @@ class DarkThemeGroup extends ThemeGroup {
     //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
     bool important = true;
     return ThemeData(
+      scaffoldBackgroundColor: colorPalette.darkBg,
       appBarTheme: AppBarTheme(
         color: colorPalette.darkBg,
         //TODO - do we want to handle the icon theme or just pass in the appbar caller?
@@ -101,6 +105,10 @@ class DarkThemeGroup extends ThemeGroup {
         ),
         textTheme: TextTheme(
         ),*/
+      ),
+      cardTheme: CardTheme(
+        color: this.colorPalette.darkFg,
+        //elevation: 24,
       ),
       textTheme: TextTheme(
         headline6: TextStyle(//title
