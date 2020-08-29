@@ -1,11 +1,13 @@
 library material_themes_manager;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:material_themes_manager/src/dark_theme_group.dart';
 import 'package:material_themes_manager/src/light_theme_group.dart';
 import 'package:material_themes_manager/src/theme_group.dart';
 
-class MaterialThemesManager extends ChangeNotifier {
+/// Mix-in [DiagnosticableTreeMixin] to have access to [debugFillProperties] for the devtool
+class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
 
   bool isDarkModeEnabled = false;
   ThemeGroup _darkThemeGroup = DarkThemeGroup();
@@ -22,6 +24,11 @@ class MaterialThemesManager extends ChangeNotifier {
     notifyListeners();
   }
 
+  void toggleDarkModeEnabled() {
+    this.isDarkModeEnabled = !this.isDarkModeEnabled;
+    notifyListeners();
+  }
+
   ThemeData getTheme(ThemeGroupType type) {
     return isDarkModeEnabled ? _darkThemeGroup.theme(type) : _lightThemeGroup.theme(type);
   }
@@ -31,15 +38,22 @@ class MaterialThemesManager extends ChangeNotifier {
   }
 
   ThemeData getPrimaryLightTheme() {
-    return _lightThemeGroup.theme(ThemeGroupType.POM);
+    return _lightThemeGroup.theme(ThemeGroupType.MOM);
   }
 
   ThemeData getPrimaryDarkTheme() {
-    return _darkThemeGroup.theme(ThemeGroupType.POM);
+    return _darkThemeGroup.theme(ThemeGroupType.MOM);
   }
 
   ThemeMode getThemeMode() {
     return isDarkModeEnabled ? ThemeMode.dark : ThemeMode.light;
+  }
+
+  /// Makes `MaterialThemesManager` readable inside the devtools by listing all of its properties
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('isDarkModeEnabled', isDarkModeEnabled.toString()));
   }
 }
 
