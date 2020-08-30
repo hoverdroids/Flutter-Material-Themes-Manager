@@ -109,4 +109,33 @@ abstract class ThemeGroup {
     }
   }
 
+  double getFontSize(FontSize size) {
+    switch(size) {
+      case FontSize.H1:
+        return 96;
+      case FontSize.H2:
+        return 60;
+      case FontSize.H3:
+        return 48;
+      case FontSize.H4:
+        return 34;
+      case FontSize.H5:
+        return 24;
+      case FontSize.TITLE:
+        return 20;
+      case FontSize.SUB1:
+        return 16;
+      case FontSize.SUB2:
+        return 14;
+      case FontSize.BODY1:
+        return 16;
+      case FontSize.BODY2:
+        return 14;
+      case FontSize.CAPTION:
+        return 12;
+      default://OVERLINE
+        return 10;
+    }
+  }
+
 }

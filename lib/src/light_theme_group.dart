@@ -25,51 +25,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
           color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-          fontWeight: getFontWeight(emphasis)
+          fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
           color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-          fontWeight: getFontWeight(emphasis)
+          fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
           color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-          fontWeight: getFontWeight(emphasis)
+          fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -101,51 +113,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -169,56 +193,68 @@ class LightThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.secondary,
-        elevation: getElevation(elevationLevel)
+        elevation: getElevation(elevationLevel),
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -249,51 +285,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -324,51 +372,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -402,51 +462,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -480,51 +552,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -555,51 +639,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -633,51 +729,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -711,51 +819,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -782,56 +902,68 @@ class LightThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.primary,
-        elevation: getElevation(elevationLevel)
+        elevation: getElevation(elevationLevel),
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: colorPalette.primary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(
@@ -860,51 +992,63 @@ class LightThemeGroup extends ThemeGroup {
       textTheme: TextTheme(
         headline1: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H1)
         ),
         headline2: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H2)
         ),
         headline3: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H3)
         ),
         headline4: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H4)
         ),
         headline5: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.H5)
         ),
         headline6: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.TITLE)
         ),
         subtitle1: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB1)
         ),
         subtitle2: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.SUB2)
         ),
         bodyText1: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY1)
         ),
         bodyText2: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.BODY2)
         ),
         caption: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.CAPTION)
         ),
         overline: TextStyle(
             color: colorPalette.secondary,
-            fontWeight: getFontWeight(emphasis)
+            fontWeight: getFontWeight(emphasis),
+            fontSize: getFontSize(FontSize.OVERLINE)
         ),
       ),
       iconTheme: IconThemeData(

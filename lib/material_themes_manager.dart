@@ -30,7 +30,7 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
     notifyListeners();
   }
 
-  ThemeData getTheme(ThemeGroupType type, {Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData getTheme(ThemeGroupType type, {Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL, groupThemeType}) {
     return isDarkModeEnabled ? _darkThemeGroup.theme(type, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize) : _lightThemeGroup.theme(type, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
   }
 
@@ -98,6 +98,10 @@ enum IconSize {
 //https://material.io/components/buttons#hierarchy-and-placement
 enum Emphasis {
   NONE, LOW, MEDIUM, HIGH
+}
+
+enum FontSize {
+  H1, H2, H3, H4, H5, TITLE, SUB1, SUB2, BODY1, BODY2, CAPTION, OVERLINE
 }
 
 //The default color palette will make the app look like a wireframe
