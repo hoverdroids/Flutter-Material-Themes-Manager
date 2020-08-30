@@ -1,43 +1,80 @@
 import 'package:flutter/material.dart';
 import 'package:material_themes_manager/src/theme_group.dart';
 
+import '../material_themes_manager.dart';
+
 class LightThemeGroup extends ThemeGroup {
 
   @override
-  ThemeData mainOnMain() {
-    //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
-    bool important = true;
-
+  ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.lightBg,
       appBarTheme: AppBarTheme(
         color: colorPalette.lightBg,
         //TODO - do we want to handle the icon theme or just pass in the appbar caller?
         /*iconTheme: IconThemeData(
-          color: important ? colorPalette.lightTextImportant : colorPalette.lightText,
+          color: important ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
         ),
         textTheme: TextTheme(
         ),*/
       ),
       cardTheme: CardTheme(
-        color: this.colorPalette.lightFg,
+        color: colorPalette.lightFg,
       ),
       textTheme: TextTheme(
-        headline6: TextStyle(//title
-          color: important ? colorPalette.lightTextImportant : colorPalette.lightText,
-          fontWeight: important ? FontWeight.bold : FontWeight.normal
+        headline1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+          color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+          fontWeight: getFontWeight(emphasis)
         ),
         subtitle1: TextStyle(
-          color: colorPalette.lightText,
+          color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+          fontWeight: getFontWeight(emphasis)
         ),
         subtitle2: TextStyle(
-          color: colorPalette.lightText,
+          color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+          fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+            fontWeight: getFontWeight(emphasis)
         ),
       ),
       iconTheme: IconThemeData(
-        color: colorPalette.lightText,
+        color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
       ),
-      toggleableActiveColor : colorPalette.lightPrimaryContrast,
+      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
       /*toggleButtonsTheme: ToggleButtonsThemeData(
         //TODO - do we want to add more styling?
       ),*/
@@ -45,10 +82,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData primaryOnMain() {
-    //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
-    bool important = true;
-
+  ThemeData primaryOnMain({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.primary,
       appBarTheme: AppBarTheme(
@@ -62,15 +96,53 @@ class LightThemeGroup extends ThemeGroup {
         color: colorPalette.primary,
       ),
       textTheme: TextTheme(
-        headline6: TextStyle(//title
-          color: colorPalette.primary,
-            fontWeight: important ? FontWeight.bold : FontWeight.normal
+        headline1: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
         ),
         subtitle1: TextStyle(
-          color: colorPalette.primary,
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
         ),
         subtitle2: TextStyle(
-          color: colorPalette.primary,
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
         ),
       ),
       iconTheme: IconThemeData(
@@ -81,23 +153,85 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData secondaryOnMain() {
+  ThemeData secondaryOnMain({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
-
+      scaffoldBackgroundColor: colorPalette.secondary,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.secondary,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: Colors.white,
+        ),*/
+      ),
+      cardTheme: CardTheme(
+        color: colorPalette.secondary,
+      ),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle1: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle2: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: colorPalette.secondary,
+      ),
+      toggleableActiveColor : colorPalette.secondary,
     );
   }
 
   @override
-  ThemeData mainOnPrimary() {
-    //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
-    bool important = true;
+  ThemeData mainOnPrimary({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.lightBg,
       appBarTheme: AppBarTheme(
         color: colorPalette.lightBg,
         //TODO - do we want to handle the icon theme or just pass in the appbar caller?
         /*iconTheme: IconThemeData(
-          color: important ? colorPalette.lightTextImportant : colorPalette.lightText,
+          color: important ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
         ),
         textTheme: TextTheme(
         ),*/
@@ -106,77 +240,654 @@ class LightThemeGroup extends ThemeGroup {
         color: this.colorPalette.lightFg,
       ),
       textTheme: TextTheme(
-        headline6: TextStyle(//title
-            color: important ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
-            fontWeight: important ? FontWeight.bold : FontWeight.normal
+        headline1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
         ),
         subtitle1: TextStyle(
-          color: colorPalette.lightPrimaryContrast,
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
         ),
         subtitle2: TextStyle(
-          color: colorPalette.lightPrimaryContrast,
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
         ),
       ),
       iconTheme: IconThemeData(
-        color: colorPalette.lightPrimaryContrast,
+        color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
       ),
-      toggleableActiveColor : colorPalette.lightPrimaryContrast,
+      toggleableActiveColor: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
     );
   }
 
   @override
-  ThemeData primaryOnPrimary() {
+  ThemeData primaryOnPrimary({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
-
+      scaffoldBackgroundColor: colorPalette.primaryContrast,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.primaryContrast,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: important ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+        ),
+        textTheme: TextTheme(
+        ),*/
+      ),
+      cardTheme: CardTheme(
+        color: colorPalette.primaryContrast,
+      ),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+      ),
+      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+      /*toggleButtonsTheme: ToggleButtonsThemeData(
+        //TODO - do we want to add more styling?
+      ),*/
     );
   }
 
   @override
-  ThemeData secondaryOnPrimary() {
+  ThemeData secondaryOnPrimary({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
-
+      scaffoldBackgroundColor: colorPalette.secondaryPrimaryContrast,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.secondaryPrimaryContrast,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: important ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+        ),
+        textTheme: TextTheme(
+        ),*/
+      ),
+      cardTheme: CardTheme(
+        color: colorPalette.secondaryPrimaryContrast,
+      ),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+      ),
+      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+      /*toggleButtonsTheme: ToggleButtonsThemeData(
+        //TODO - do we want to add more styling?
+      ),*/
     );
   }
 
   @override
-  ThemeData mainOnSecondary() {
+  ThemeData mainOnSecondary({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
-
+      scaffoldBackgroundColor: colorPalette.lightBg,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.lightBg,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: important ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+        ),
+        textTheme: TextTheme(
+        ),*/
+      ),
+      cardTheme: CardTheme(
+        color: this.colorPalette.lightFg,
+      ),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+      ),
+      toggleableActiveColor: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
     );
   }
 
   @override
-  ThemeData primaryOnSecondary() {
+  ThemeData primaryOnSecondary({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
-
+      scaffoldBackgroundColor: colorPalette.primarySecondaryContrast,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.primarySecondaryContrast,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: important ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+        ),
+        textTheme: TextTheme(
+        ),*/
+      ),
+      cardTheme: CardTheme(
+        color: colorPalette.primarySecondaryContrast,
+      ),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+      ),
+      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+      /*toggleButtonsTheme: ToggleButtonsThemeData(
+        //TODO - do we want to add more styling?
+      ),*/
     );
   }
 
   @override
-  ThemeData secondaryOnSecondary() {
+  ThemeData secondaryOnSecondary({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
-
+      scaffoldBackgroundColor: colorPalette.secondaryContrast,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.secondaryContrast,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: important ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+        ),
+        textTheme: TextTheme(
+        ),*/
+      ),
+      cardTheme: CardTheme(
+        color: colorPalette.secondaryContrast,
+      ),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+      ),
+      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+      /*toggleButtonsTheme: ToggleButtonsThemeData(
+        //TODO - do we want to add more styling?
+      ),*/
     );
   }
 
   @override
-  ThemeData mainOnImage() {
+  ThemeData mainOnImage({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
-
+      scaffoldBackgroundColor: colorPalette.lightBg,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.lightBg,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: important ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+        ),
+        textTheme: TextTheme(
+        ),*/
+      ),
+      cardTheme: CardTheme(
+        color: colorPalette.lightFg,
+      ),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+            fontWeight: getFontWeight(emphasis)
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+      ),
+      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+      /*toggleButtonsTheme: ToggleButtonsThemeData(
+        //TODO - do we want to add more styling?
+      ),*/
     );
   }
 
   @override
-  ThemeData primaryOnImage() {
+  ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
-
+      scaffoldBackgroundColor: colorPalette.primary,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.primary,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: Colors.white,
+        ),*/
+      ),
+      cardTheme: CardTheme(
+        color: colorPalette.primary,
+      ),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle1: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle2: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: colorPalette.primary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: colorPalette.primary,
+      ),
+      toggleableActiveColor : colorPalette.primary,
     );
   }
 
   @override
-  ThemeData secondaryOnImage() {
+  ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE}) {
     return ThemeData(
-
+      scaffoldBackgroundColor: colorPalette.secondary,
+      appBarTheme: AppBarTheme(
+        color: colorPalette.secondary,
+        //TODO - do we want to handle the icon theme or just pass in the appbar caller?
+        /*iconTheme: IconThemeData(
+          color: Colors.white,
+        ),*/
+      ),
+      cardTheme: CardTheme(
+        color: colorPalette.secondary,
+      ),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline2: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline3: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline4: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline5: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        headline6: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle1: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        subtitle2: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText1: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        bodyText2: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        caption: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+        overline: TextStyle(
+            color: colorPalette.secondary,
+            fontWeight: getFontWeight(emphasis)
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: colorPalette.secondary,
+      ),
+      toggleableActiveColor : colorPalette.secondary,
     );
   }
 
@@ -244,3 +955,4 @@ class LightThemeGroup extends ThemeGroup {
     );
   }
 }
+

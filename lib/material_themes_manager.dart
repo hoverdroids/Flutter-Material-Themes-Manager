@@ -94,55 +94,103 @@ enum IconSize {
   SMALL, DEFAULT, LARGE
 }
 
+//https://material.io/components/buttons#hierarchy-and-placement
+enum Emphasis {
+  NONE, LOW, MEDIUM, HIGH
+}
+
 //The default color palette will make the app look like a wireframe
 class ColorPalette {
-  Color lightBg;
-  Color lightBgAccent;
-  Color lightFg;
-  Color lightFgAccent;
-  Color lightText;
-  Color lightTextImportant;
-  Color lightPrimaryContrast;
-  Color lightPrimaryContrastImportant;
-
-  Color darkBg;
-  Color darkBgAccent;
-  Color darkFg;
-  Color darkFgAccent;
-  Color darkText;
-  Color darkTextImportant;
-  Color darkPrimaryContras;
-  Color darkPrimaryContrast;
-  Color darkPrimaryContrastImportant;
-
+  //Primary Colors
   Color primary;
   Color primaryAccent;
+
+  Color primaryContrast;
+  Color primaryContrastImportant;
+  Color primarySecondaryContrast;
+  Color primarySecondaryContrastImportant;
+  
+  //Secondary Colors
   Color secondary;
   Color secondaryAccent;
 
+  Color secondaryContrast;
+  Color secondaryContrastImportant;
+  Color secondaryPrimaryContrast;
+  Color secondaryPrimaryContrastImportant;
+  
+  //Light "GrayScale"
+  Color lightBg;
+  Color lightBgAccent;
+  
+  Color lightFg;
+  Color lightFgAccent;
+  
+  Color lightContrast;
+  Color lightContrastImportant;
+  Color lightPrimaryContrast;
+  Color lightPrimaryContrastImportant;
+  Color lightSecondaryContrast;
+  Color lightSecondaryContrastImportant;
+  Color lightImageContrast;
+  Color lightImageContrastImportant;
+  
+  //Dark "GrayScale"
+  Color darkBg;
+  Color darkBgAccent;
+  
+  Color darkFg;
+  Color darkFgAccent;
+  
+  Color darkContrast;
+  Color darkContrastImportant;
+  Color darkPrimaryContrast;
+  Color darkPrimaryContrastImportant;
+  Color darkSecondaryContrast;
+  Color darkSecondaryContrastImportant;
+  Color darkImageContrast;
+  Color darkImageContrastImportant;
+  
   ColorPalette({
+    this.primary = Colors.deepPurple,
+    this.primaryAccent = Colors.deepPurpleAccent,
+    this.primaryContrast = Colors.purple,
+    this.primaryContrastImportant = Colors.purpleAccent,
+    this.primarySecondaryContrast = Colors.deepPurple,
+    this.primarySecondaryContrastImportant = Colors.deepPurpleAccent,
+    
+    this.secondary = Colors.deepOrange,
+    this.secondaryAccent = Colors.deepOrangeAccent,
+    this.secondaryContrast = Colors.orange,
+    this.secondaryContrastImportant = Colors.orangeAccent,
+    this.secondaryPrimaryContrast = Colors.deepOrange,
+    this.secondaryPrimaryContrastImportant = Colors.deepOrangeAccent,
+    
     this.lightBg = Colors.white,
     this.lightBgAccent = Colors.white70,
     this.lightFg = Colors.white70,
     this.lightFgAccent = Colors.white60,
-    this.lightText = Colors.grey,
-    this.lightTextImportant = ConstantColors.gray800,
+    this.lightContrast = Colors.grey,
+    this.lightContrastImportant = ConstantColors.gray800,
     this.lightPrimaryContrast = Colors.white70,
     this.lightPrimaryContrastImportant = Colors.white,
-  
+    this.lightSecondaryContrast = Colors.white70,
+    this.lightSecondaryContrastImportant = Colors.white,
+    this.lightImageContrast = Colors.white70,
+    this.lightImageContrastImportant = Colors.white,
+
     this.darkBg = Colors.black,
     this.darkBgAccent = ConstantColors.gray1000,
     this.darkFg = ConstantColors.gray800,
     this.darkFgAccent = ConstantColors.gray700,
-    this.darkText = Colors.white70,
-    this.darkTextImportant = Colors.white,
-    this.darkPrimaryContras = Colors.white,
+    this.darkContrast = Colors.white70,
+    this.darkContrastImportant = Colors.white,
     this.darkPrimaryContrast = ConstantColors.gray800,
     this.darkPrimaryContrastImportant = Colors.black,
-    this.primary = Colors.deepPurple,
-    this.primaryAccent = Colors.deepPurpleAccent,
-    this.secondary = Colors.deepOrange,
-    this.secondaryAccent = Colors.deepOrangeAccent
+    this.darkSecondaryContrast = ConstantColors.gray800,
+    this.darkSecondaryContrastImportant = Colors.black,
+    this.darkImageContrast = ConstantColors.gray800,
+    this.darkImageContrastImportant = Colors.black,
   });
 }
 

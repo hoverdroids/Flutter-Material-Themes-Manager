@@ -22,19 +22,19 @@ abstract class ThemeGroup {
     }
   }
 
-  ThemeData theme(ThemeGroupType themeGroupType) {
+  ThemeData theme(ThemeGroupType themeGroupType, {bool isImportant = false}) {
     if(themeGroupType == ThemeGroupType.MOM) {
-      return mainOnMain();
+      return mainOnMain(isImportant: isImportant);
     } else if (themeGroupType == ThemeGroupType.POM) {
-      return primaryOnMain();
+      return primaryOnMain(isImportant: isImportant);
     } else if (themeGroupType == ThemeGroupType.SOM) {
-      return secondaryOnMain();
+      return secondaryOnMain(isImportant: isImportant);
     } else if (themeGroupType == ThemeGroupType.MOP) {
-      return mainOnPrimary();
+      return mainOnPrimary(isImportant: isImportant);
     } else if (themeGroupType == ThemeGroupType.POP) {
-      return primaryOnPrimary();
+      return primaryOnPrimary(isImportant: isImportant);
     } else if (themeGroupType == ThemeGroupType.SOP) {
-      return secondaryOnPrimary();
+      return secondaryOnPrimary(isImportant: isImportant);
     } else if (themeGroupType == ThemeGroupType.MOS) {
       return mainOnSecondary();
     } else if (themeGroupType == ThemeGroupType.POS) {
@@ -50,22 +50,35 @@ abstract class ThemeGroup {
     }
   }
 
-  ThemeData mainOnMain();
-  ThemeData primaryOnMain();
-  ThemeData secondaryOnMain();
-  ThemeData mainOnPrimary();
-  ThemeData primaryOnPrimary();
-  ThemeData secondaryOnPrimary();
-  ThemeData mainOnSecondary();
-  ThemeData primaryOnSecondary();
-  ThemeData secondaryOnSecondary();
-  ThemeData mainOnImage();
-  ThemeData primaryOnImage();
-  ThemeData secondaryOnImage();
+  ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE});
+  ThemeData primaryOnMain({Emphasis emphasis = Emphasis.NONE});
+  ThemeData secondaryOnMain({Emphasis emphasis = Emphasis.NONE});
+  ThemeData mainOnPrimary({Emphasis emphasis = Emphasis.NONE});
+  ThemeData primaryOnPrimary({Emphasis emphasis = Emphasis.NONE});
+  ThemeData secondaryOnPrimary({Emphasis emphasis = Emphasis.NONE});
+  ThemeData mainOnSecondary({Emphasis emphasis = Emphasis.NONE});
+  ThemeData primaryOnSecondary({Emphasis emphasis = Emphasis.NONE});
+  ThemeData secondaryOnSecondary({Emphasis emphasis = Emphasis.NONE});
+  ThemeData mainOnImage({Emphasis emphasis = Emphasis.NONE});
+  ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE});
+  ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE});
 
   Widget mainBackgroundGradient();
   Widget mainForegroundGradient();
   Widget primaryGradient();
   Widget secondaryGradient();
+
+  FontWeight getFontWeight(Emphasis emphasis) {
+    switch(emphasis) {
+      case Emphasis.HIGH:
+        return FontWeight.bold;//w700
+      case Emphasis.MEDIUM:
+        return FontWeight.w600;
+      case Emphasis.LOW:
+        return FontWeight.w500;
+      default:
+        return FontWeight.normal;//w400
+    }
+  }
 
 }
