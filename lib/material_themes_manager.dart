@@ -30,20 +30,20 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
     notifyListeners();
   }
 
-  ThemeData getTheme(ThemeGroupType type, {Emphasis emphasis = Emphasis.NONE}) {
-    return isDarkModeEnabled ? _darkThemeGroup.theme(type, emphasis: emphasis) : _lightThemeGroup.theme(type, emphasis: emphasis);
+  ThemeData getTheme(ThemeGroupType type, {Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
+    return isDarkModeEnabled ? _darkThemeGroup.theme(type, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize) : _lightThemeGroup.theme(type, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
   }
 
-  ThemeData getPrimaryTheme({Emphasis emphasis = Emphasis.NONE}) {
-    return isDarkModeEnabled ? _darkThemeGroup.theme(ThemeGroupType.POM, emphasis: emphasis) : _lightThemeGroup.theme(ThemeGroupType.POM, emphasis: emphasis);
+  ThemeData getPrimaryTheme({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
+    return isDarkModeEnabled ? _darkThemeGroup.theme(ThemeGroupType.POM, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize) : _lightThemeGroup.theme(ThemeGroupType.POM, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
   }
 
-  ThemeData getPrimaryLightTheme({Emphasis emphasis = Emphasis.NONE}) {
-    return _lightThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis);
+  ThemeData getPrimaryLightTheme({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
+    return _lightThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
   }
 
-  ThemeData getPrimaryDarkTheme({Emphasis emphasis = Emphasis.NONE}) {
-    return _darkThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis);
+  ThemeData getPrimaryDarkTheme({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
+    return _darkThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
   }
 
   ThemeMode getThemeMode() {

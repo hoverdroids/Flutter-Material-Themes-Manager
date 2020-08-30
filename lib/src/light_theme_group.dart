@@ -6,7 +6,7 @@ import '../material_themes_manager.dart';
 class LightThemeGroup extends ThemeGroup {
 
   @override
-  ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.lightBg,
       appBarTheme: AppBarTheme(
@@ -84,7 +84,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData primaryOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData primaryOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.primary,
       appBarTheme: AppBarTheme(
@@ -157,7 +157,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData secondaryOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData secondaryOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.secondary,
       appBarTheme: AppBarTheme(
@@ -230,7 +230,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData mainOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData mainOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.lightBg,
       appBarTheme: AppBarTheme(
@@ -305,7 +305,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData primaryOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData primaryOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.primaryContrast,
       appBarTheme: AppBarTheme(
@@ -383,7 +383,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData secondaryOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData secondaryOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.secondaryPrimaryContrast,
       appBarTheme: AppBarTheme(
@@ -461,7 +461,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData mainOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData mainOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.lightBg,
       appBarTheme: AppBarTheme(
@@ -536,7 +536,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData primaryOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData primaryOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.primarySecondaryContrast,
       appBarTheme: AppBarTheme(
@@ -614,7 +614,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData secondaryOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData secondaryOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.secondaryContrast,
       appBarTheme: AppBarTheme(
@@ -692,7 +692,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData mainOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData mainOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.lightBg,
       appBarTheme: AppBarTheme(
@@ -770,7 +770,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.primary,
       appBarTheme: AppBarTheme(
@@ -843,7 +843,7 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.secondary,
       appBarTheme: AppBarTheme(

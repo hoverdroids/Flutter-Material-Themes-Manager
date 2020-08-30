@@ -1,3 +1,4 @@
+## [0.0.13] - Propagate elevation and icons size
 ## [0.0.12] - Added Card elevation and Icon sizes
 ## [0.0.11] - Updated ThemeManager to propagate Emphasis
 ## [0.0.10] - Updated all lightTheme/darkTheme methods
