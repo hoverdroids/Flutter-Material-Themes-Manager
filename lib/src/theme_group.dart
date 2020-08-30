@@ -22,31 +22,31 @@ abstract class ThemeGroup {
     }
   }
 
-  ThemeData theme(ThemeGroupType themeGroupType, {bool isImportant = false}) {
+  ThemeData theme(ThemeGroupType themeGroupType, {Emphasis emphasis = Emphasis.NONE}) {
     if(themeGroupType == ThemeGroupType.MOM) {
-      return mainOnMain(isImportant: isImportant);
+      return mainOnMain(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.POM) {
-      return primaryOnMain(isImportant: isImportant);
+      return primaryOnMain(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.SOM) {
-      return secondaryOnMain(isImportant: isImportant);
+      return secondaryOnMain(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.MOP) {
-      return mainOnPrimary(isImportant: isImportant);
+      return mainOnPrimary(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.POP) {
-      return primaryOnPrimary(isImportant: isImportant);
+      return primaryOnPrimary(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.SOP) {
-      return secondaryOnPrimary(isImportant: isImportant);
+      return secondaryOnPrimary(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.MOS) {
-      return mainOnSecondary();
+      return mainOnSecondary(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.POS) {
-      return primaryOnSecondary();
+      return primaryOnSecondary(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.SOS) {
-      return secondaryOnSecondary();
+      return secondaryOnSecondary(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.MOI) {
-      return mainOnImage();
+      return mainOnImage(emphasis: emphasis);
     } else if (themeGroupType == ThemeGroupType.POI) {
-      return primaryOnImage();
+      return primaryOnImage(emphasis: emphasis);
     } else {
-      return secondaryOnImage();
+      return secondaryOnImage(emphasis: emphasis);
     }
   }
 
