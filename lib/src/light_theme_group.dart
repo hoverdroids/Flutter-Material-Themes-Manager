@@ -179,4 +179,68 @@ class LightThemeGroup extends ThemeGroup {
 
     );
   }
+
+  @override
+  Widget mainBackgroundGradient() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            colorPalette.lightBg,
+            colorPalette.lightBgAccent,
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget mainForegroundGradient() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            colorPalette.lightFg,
+            colorPalette.lightFgAccent,
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget primaryGradient() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            colorPalette.primary,
+            colorPalette.primaryAccent,
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget secondaryGradient() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            colorPalette.secondary,
+            colorPalette.secondaryAccent,
+          ],
+        ),
+      ),
+    );
+  }
 }

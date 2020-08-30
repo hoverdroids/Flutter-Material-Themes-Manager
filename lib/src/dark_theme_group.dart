@@ -3,6 +3,15 @@ import 'package:material_themes_manager/src/theme_group.dart';
 
 class DarkThemeGroup extends ThemeGroup {
 
+  //TODO :
+  /*
+  ThemeData(
+            primarySwatch: Colors.blue,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+
+   */
+
   @override
   ThemeData mainOnMain() {
     //TODO - pass from widget source to make bold/starker contrast vs normal/lighter contrast
@@ -182,6 +191,70 @@ class DarkThemeGroup extends ThemeGroup {
   ThemeData secondaryOnImage() {
     return ThemeData(
 
+    );
+  }
+
+  @override
+  Widget mainBackgroundGradient() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            colorPalette.darkBg,
+            colorPalette.darkBgAccent,
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget mainForegroundGradient() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            colorPalette.darkFg,
+            colorPalette.darkFgAccent,
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget primaryGradient() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            colorPalette.primary,
+            colorPalette.primaryAccent,
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget secondaryGradient() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            colorPalette.secondary,
+            colorPalette.secondaryAccent,
+          ],
+        ),
+      ),
     );
   }
 

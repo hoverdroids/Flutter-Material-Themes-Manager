@@ -9,6 +9,18 @@ abstract class ThemeGroup {
   void updateColorPalette(ColorPalette colorPalette) {
     this.colorPalette = colorPalette;
   }
+  
+  Widget backgrounddGradient(BackgroundGradientType type) {
+    if (type == BackgroundGradientType.MAIN_BG) {
+      return primaryGradient();
+    } else if (type == BackgroundGradientType.MAIN_FG) {
+      return secondaryGradient();
+    } else if (type == BackgroundGradientType.PRIMARY) {
+      return mainGradient();
+    } else {
+      return primaryGradient();
+    }
+  }
 
   ThemeData theme(ThemeGroupType themeGroupType) {
     if(themeGroupType == ThemeGroupType.MOM) {
@@ -50,5 +62,10 @@ abstract class ThemeGroup {
   ThemeData mainOnImage();
   ThemeData primaryOnImage();
   ThemeData secondaryOnImage();
+
+  Widget mainBackgroundGradient();
+  Widget mainForegroundGradient();
+  Widget primaryGradient();
+  Widget secondaryGradient();
 
 }

@@ -49,6 +49,10 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
     return isDarkModeEnabled ? ThemeMode.dark : ThemeMode.light;
   }
 
+  Widget getBackgroundGradient(BackgroundGradientType type) {
+    return isDarkModeEnabled ? _darkThemeGroup.backgrounddGradient(type) : _lightThemeGroup.backgrounddGradient(type);
+  }
+
   /// Makes `MaterialThemesManager` readable inside the devtools by listing all of its properties
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -72,6 +76,13 @@ enum ThemeGroupType {
   SOI,  //SECONDARY_ON_IMAGE
 }
 
+enum BackgroundGradientType {
+  MAIN_BG,
+  MAIN_FG,
+  PRIMARY,
+  SECONDARY
+}
+
 enum ElevationLevel {
   NONE, LOW, MEDIUM, HIGH, EXTREME
 }
@@ -85,14 +96,18 @@ enum IconSize {
 //The default color palette will make the app look like a wireframe
 class ColorPalette {
   Color lightBg = Colors.white;
+  Color lightBgAccent = Colors.white70;
   Color lightFg = Colors.white70;
+  Color lightFgAccent = Colors.white60;
   Color lightText = Colors.grey;
   Color lightTextImportant = Colors.grey[800];
   Color lightPrimaryContrast = Colors.white70;
   Color lightPrimaryContrastImportant = Colors.white;
 
   Color darkBg = Colors.black;
+  Color darkBgAccent = Colors.black12;
   Color darkFg = Colors.grey[800];
+  Color darkFgAccent = Colors.grey[700];
   Color darkText = Colors.white70;
   Color darkTextImportant = Colors.white;
   Color darkPrimaryContras = Colors.white;
@@ -100,13 +115,17 @@ class ColorPalette {
   Color darkPrimaryContrastImportant = Colors.black;
 
   Color primary;
+  Color primaryAccent;
   Color secondary;
+  Color secondaryAccent;
 
   ColorPalette({
     //this.mainLight = Colors.white, TODO - add the remaining fields to the constructor
     //this.mainDark = Colors.black,
     this.primary = Colors.deepPurple,
-    this.secondary = Colors.deepPurple
+    this.primaryAccent = Colors.deepPurpleAccent,
+    this.secondary = Colors.deepOrange,
+    this.secondaryAccent = Colors.deepOrangeAccent
   });
 }
 
@@ -114,13 +133,17 @@ class ColorPalette {
 class PinkPalette extends ColorPalette {
   PinkPalette() : super(
       primary: Colors.pink,
-      secondary: Colors.pink
+      primaryAccent: Colors.pinkAccent,
+      secondary: Colors.pink,
+      secondaryAccent: Colors.pinkAccent
   );
 }
 
 class GreenPalette extends ColorPalette {
   GreenPalette() : super(
       primary: Colors.green,
-      secondary: Colors.green
+      primaryAccent: Colors.greenAccent,
+      secondary: Colors.green,
+      secondaryAccent: Colors.greenAccent
   );
 }
