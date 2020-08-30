@@ -15,7 +15,7 @@ class DarkThemeGroup extends ThemeGroup {
    */
 
   @override
-  ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.darkBg,
       appBarTheme: AppBarTheme(
@@ -29,6 +29,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.darkFg,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -82,6 +83,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: emphasis == Emphasis.HIGH ? colorPalette.darkContrastImportant : colorPalette.darkContrast,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.darkContrastImportant : colorPalette.darkContrast,
       /*toggleButtonsTheme: ToggleButtonsThemeData(
@@ -91,7 +93,7 @@ class DarkThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData primaryOnMain({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData primaryOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.primary,
       appBarTheme: AppBarTheme(
@@ -103,6 +105,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.primary,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -156,13 +159,14 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: colorPalette.primary,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : colorPalette.primary,
     );
   }
 
   @override
-  ThemeData secondaryOnMain({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData secondaryOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.secondary,
       appBarTheme: AppBarTheme(
@@ -174,6 +178,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.secondary,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -227,13 +232,14 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: colorPalette.secondary,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : colorPalette.secondary,
     );
   }
 
   @override
-  ThemeData mainOnPrimary({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData mainOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.darkBg,
       appBarTheme: AppBarTheme(
@@ -247,6 +253,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: this.colorPalette.darkFg,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -300,13 +307,14 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: emphasis == Emphasis.HIGH ? colorPalette.darkPrimaryContrastImportant : colorPalette.darkPrimaryContrast,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor: emphasis == Emphasis.HIGH ? colorPalette.darkPrimaryContrastImportant : colorPalette.darkPrimaryContrast,
     );
   }
 
   @override
-  ThemeData primaryOnPrimary({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData primaryOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.primaryContrast,
       appBarTheme: AppBarTheme(
@@ -320,6 +328,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.primaryContrast,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -373,6 +382,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
       /*toggleButtonsTheme: ToggleButtonsThemeData(
@@ -382,7 +392,7 @@ class DarkThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData secondaryOnPrimary({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData secondaryOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.secondaryPrimaryContrast,
       appBarTheme: AppBarTheme(
@@ -396,6 +406,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.secondaryPrimaryContrast,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -449,6 +460,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
       /*toggleButtonsTheme: ToggleButtonsThemeData(
@@ -458,7 +470,7 @@ class DarkThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData mainOnSecondary({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData mainOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.darkBg,
       appBarTheme: AppBarTheme(
@@ -472,6 +484,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: this.colorPalette.darkFg,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -525,13 +538,14 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: emphasis == Emphasis.HIGH ? colorPalette.darkSecondaryContrastImportant : colorPalette.darkSecondaryContrast,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor: emphasis == Emphasis.HIGH ? colorPalette.darkSecondaryContrastImportant : colorPalette.darkSecondaryContrast,
     );
   }
 
   @override
-  ThemeData primaryOnSecondary({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData primaryOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.primarySecondaryContrast,
       appBarTheme: AppBarTheme(
@@ -545,6 +559,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.primarySecondaryContrast,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -598,6 +613,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
       /*toggleButtonsTheme: ToggleButtonsThemeData(
@@ -607,7 +623,7 @@ class DarkThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData secondaryOnSecondary({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData secondaryOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.secondaryContrast,
       appBarTheme: AppBarTheme(
@@ -621,6 +637,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.secondaryContrast,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -674,6 +691,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
       /*toggleButtonsTheme: ToggleButtonsThemeData(
@@ -683,7 +701,7 @@ class DarkThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData mainOnImage({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData mainOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.darkBg,
       appBarTheme: AppBarTheme(
@@ -697,6 +715,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.darkFg,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -750,6 +769,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: emphasis == Emphasis.HIGH ? colorPalette.darkImageContrastImportant : colorPalette.darkImageContrast,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.darkImageContrastImportant : colorPalette.darkImageContrast,
       /*toggleButtonsTheme: ToggleButtonsThemeData(
@@ -759,7 +779,7 @@ class DarkThemeGroup extends ThemeGroup {
   }
 
   @override
-  ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.primary,
       appBarTheme: AppBarTheme(
@@ -771,6 +791,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.primary,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -824,13 +845,14 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: colorPalette.primary,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : colorPalette.primary,
     );
   }
 
   @override
-  ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       scaffoldBackgroundColor: colorPalette.secondary,
       appBarTheme: AppBarTheme(
@@ -842,6 +864,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       cardTheme: CardTheme(
         color: colorPalette.secondary,
+        elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -895,6 +918,7 @@ class DarkThemeGroup extends ThemeGroup {
       ),
       iconTheme: IconThemeData(
         color: colorPalette.secondary,
+        size: getIconSize(iconSize)
       ),
       toggleableActiveColor : colorPalette.secondary,
     );

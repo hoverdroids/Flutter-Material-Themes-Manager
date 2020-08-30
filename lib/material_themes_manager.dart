@@ -84,14 +84,15 @@ enum BackgroundGradientType {
   SECONDARY
 }
 
+//https://material.io/design/environment/light-shadows.html#shadows
+//https://material.io/design/environment/elevation.html
 enum ElevationLevel {
-  NONE, LOW, MEDIUM, HIGH, EXTREME
+  FLAT, LOW, MEDIUM, HIGH, EXTREME
 }
 
-//0dp, 2dp, 6dp, 12dp, 24dp
-
+//https://google.github.io/material-design-icons/
 enum IconSize {
-  SMALL, DEFAULT, LARGE
+  MINI, SMALL, MEDIUM, LARGE
 }
 
 //https://material.io/components/buttons#hierarchy-and-placement

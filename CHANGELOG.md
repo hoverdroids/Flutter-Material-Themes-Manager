@@ -1,3 +1,4 @@
+## [0.0.12] - Added Card elevation and Icon sizes
 ## [0.0.11] - Updated ThemeManager to propagate Emphasis
 ## [0.0.10] - Updated all lightTheme/darkTheme methods
 ## [0.0.9] - Add all color palette fields to constructor. Example shows background gradient changing.

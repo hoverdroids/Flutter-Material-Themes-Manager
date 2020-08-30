@@ -22,46 +22,46 @@ abstract class ThemeGroup {
     }
   }
 
-  ThemeData theme(ThemeGroupType themeGroupType, {Emphasis emphasis = Emphasis.NONE}) {
+  ThemeData theme(ThemeGroupType themeGroupType, {Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL}) {
     if(themeGroupType == ThemeGroupType.MOM) {
-      return mainOnMain(emphasis: emphasis);
+      return mainOnMain(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.POM) {
-      return primaryOnMain(emphasis: emphasis);
+      return primaryOnMain(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.SOM) {
-      return secondaryOnMain(emphasis: emphasis);
+      return secondaryOnMain(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.MOP) {
-      return mainOnPrimary(emphasis: emphasis);
+      return mainOnPrimary(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.POP) {
-      return primaryOnPrimary(emphasis: emphasis);
+      return primaryOnPrimary(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.SOP) {
-      return secondaryOnPrimary(emphasis: emphasis);
+      return secondaryOnPrimary(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.MOS) {
-      return mainOnSecondary(emphasis: emphasis);
+      return mainOnSecondary(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.POS) {
-      return primaryOnSecondary(emphasis: emphasis);
+      return primaryOnSecondary(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.SOS) {
-      return secondaryOnSecondary(emphasis: emphasis);
+      return secondaryOnSecondary(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.MOI) {
-      return mainOnImage(emphasis: emphasis);
+      return mainOnImage(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.POI) {
-      return primaryOnImage(emphasis: emphasis);
+      return primaryOnImage(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else {
-      return secondaryOnImage(emphasis: emphasis);
+      return secondaryOnImage(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     }
   }
 
-  ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE});
-  ThemeData primaryOnMain({Emphasis emphasis = Emphasis.NONE});
-  ThemeData secondaryOnMain({Emphasis emphasis = Emphasis.NONE});
-  ThemeData mainOnPrimary({Emphasis emphasis = Emphasis.NONE});
-  ThemeData primaryOnPrimary({Emphasis emphasis = Emphasis.NONE});
-  ThemeData secondaryOnPrimary({Emphasis emphasis = Emphasis.NONE});
-  ThemeData mainOnSecondary({Emphasis emphasis = Emphasis.NONE});
-  ThemeData primaryOnSecondary({Emphasis emphasis = Emphasis.NONE});
-  ThemeData secondaryOnSecondary({Emphasis emphasis = Emphasis.NONE});
-  ThemeData mainOnImage({Emphasis emphasis = Emphasis.NONE});
-  ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE});
-  ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE});
+  ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData primaryOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData secondaryOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData mainOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData primaryOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData secondaryOnPrimary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData mainOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData primaryOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData secondaryOnSecondary({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData mainOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
+  ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.MEDIUM, IconSize iconSize = IconSize.SMALL});
 
   Widget mainBackgroundGradient();
   Widget mainForegroundGradient();
@@ -78,6 +78,34 @@ abstract class ThemeGroup {
         return FontWeight.w500;
       default:
         return FontWeight.normal;//w400
+    }
+  }
+
+  double getIconSize(IconSize size) {
+    switch(size) {
+      case IconSize.LARGE:
+        return 48;
+      case IconSize.MEDIUM:
+        return 36;
+      case IconSize.SMALL:
+        return 24;
+      default:
+        return 18;
+    }
+  }
+
+  double getElevation(ElevationLevel elevation) {
+    switch(elevation) {
+      case ElevationLevel.EXTREME:
+        return 24;
+      case ElevationLevel.HIGH:
+        return 12;
+      case ElevationLevel.MEDIUM:
+        return 6;
+      case ElevationLevel.LOW:
+        return 2;
+      default:
+        return 0;
     }
   }
 
