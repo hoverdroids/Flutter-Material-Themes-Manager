@@ -30,20 +30,20 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
     notifyListeners();
   }
 
-  ThemeData getTheme(ThemeGroupType type) {
-    return isDarkModeEnabled ? _darkThemeGroup.theme(type) : _lightThemeGroup.theme(type);
+  ThemeData getTheme(ThemeGroupType type, {Emphasis emphasis = Emphasis.NONE}) {
+    return isDarkModeEnabled ? _darkThemeGroup.theme(type, emphasis: emphasis) : _lightThemeGroup.theme(type, emphasis: emphasis);
   }
 
-  ThemeData getPrimaryTheme() {
-    return isDarkModeEnabled ? _darkThemeGroup.theme(ThemeGroupType.POM) : _lightThemeGroup.theme(ThemeGroupType.POM);
+  ThemeData getPrimaryTheme({Emphasis emphasis = Emphasis.NONE}) {
+    return isDarkModeEnabled ? _darkThemeGroup.theme(ThemeGroupType.POM, emphasis: emphasis) : _lightThemeGroup.theme(ThemeGroupType.POM, emphasis: emphasis);
   }
 
-  ThemeData getPrimaryLightTheme() {
-    return _lightThemeGroup.theme(ThemeGroupType.MOM);
+  ThemeData getPrimaryLightTheme({Emphasis emphasis = Emphasis.NONE}) {
+    return _lightThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis);
   }
 
-  ThemeData getPrimaryDarkTheme() {
-    return _darkThemeGroup.theme(ThemeGroupType.MOM);
+  ThemeData getPrimaryDarkTheme({Emphasis emphasis = Emphasis.NONE}) {
+    return _darkThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis);
   }
 
   ThemeMode getThemeMode() {

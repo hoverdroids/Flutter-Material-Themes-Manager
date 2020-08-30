@@ -1,3 +1,4 @@
+## [0.0.11] - Updated ThemeManager to propagate Emphasis
 ## [0.0.10] - Updated all lightTheme/darkTheme methods
 ## [0.0.9] - Add all color palette fields to constructor. Example shows background gradient changing.
 ## [0.0.8] - Fixed background gradient bug
