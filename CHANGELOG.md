@@ -1,3 +1,4 @@
+## [0.0.8] - Fixed background gradient bug
 ## [0.0.7] - Added background gradients
 ## [0.0.6] - Updated Provider to 4+ and added an example to main
 ## [0.0.5] - Added more card themes

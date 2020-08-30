@@ -50,7 +50,7 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   }
 
   Widget getBackgroundGradient(BackgroundGradientType type) {
-    return isDarkModeEnabled ? _darkThemeGroup.backgrounddGradient(type) : _lightThemeGroup.backgrounddGradient(type);
+    return isDarkModeEnabled ? _darkThemeGroup.backgroundGradient(type) : _lightThemeGroup.backgroundGradient(type);
   }
 
   /// Makes `MaterialThemesManager` readable inside the devtools by listing all of its properties

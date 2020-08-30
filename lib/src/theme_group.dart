@@ -10,15 +10,15 @@ abstract class ThemeGroup {
     this.colorPalette = colorPalette;
   }
   
-  Widget backgrounddGradient(BackgroundGradientType type) {
+  Widget backgroundGradient(BackgroundGradientType type) {
     if (type == BackgroundGradientType.MAIN_BG) {
-      return primaryGradient();
+      return mainBackgroundGradient();
     } else if (type == BackgroundGradientType.MAIN_FG) {
-      return secondaryGradient();
+      return mainForegroundGradient();
     } else if (type == BackgroundGradientType.PRIMARY) {
-      return mainGradient();
-    } else {
       return primaryGradient();
+    } else {
+      return secondaryGradient();
     }
   }
 
