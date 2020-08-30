@@ -2,6 +2,7 @@ library material_themes_manager;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:material_themes_manager/src/colors.dart';
 import 'package:material_themes_manager/src/dark_theme_group.dart';
 import 'package:material_themes_manager/src/light_theme_group.dart';
 import 'package:material_themes_manager/src/theme_group.dart';
@@ -95,24 +96,24 @@ enum IconSize {
 
 //The default color palette will make the app look like a wireframe
 class ColorPalette {
-  Color lightBg = Colors.white;
-  Color lightBgAccent = Colors.white70;
-  Color lightFg = Colors.white70;
-  Color lightFgAccent = Colors.white60;
-  Color lightText = Colors.grey;
-  Color lightTextImportant = Colors.grey[800];
-  Color lightPrimaryContrast = Colors.white70;
-  Color lightPrimaryContrastImportant = Colors.white;
+  Color lightBg;
+  Color lightBgAccent;
+  Color lightFg;
+  Color lightFgAccent;
+  Color lightText;
+  Color lightTextImportant;
+  Color lightPrimaryContrast;
+  Color lightPrimaryContrastImportant;
 
-  Color darkBg = Colors.black;
-  Color darkBgAccent = Colors.black12;
-  Color darkFg = Colors.grey[800];
-  Color darkFgAccent = Colors.grey[700];
-  Color darkText = Colors.white70;
-  Color darkTextImportant = Colors.white;
-  Color darkPrimaryContras = Colors.white;
-  Color darkPrimaryContrast = Colors.grey[800];
-  Color darkPrimaryContrastImportant = Colors.black;
+  Color darkBg;
+  Color darkBgAccent;
+  Color darkFg;
+  Color darkFgAccent;
+  Color darkText;
+  Color darkTextImportant;
+  Color darkPrimaryContras;
+  Color darkPrimaryContrast;
+  Color darkPrimaryContrastImportant;
 
   Color primary;
   Color primaryAccent;
@@ -120,8 +121,24 @@ class ColorPalette {
   Color secondaryAccent;
 
   ColorPalette({
-    //this.mainLight = Colors.white, TODO - add the remaining fields to the constructor
-    //this.mainDark = Colors.black,
+    this.lightBg = Colors.white,
+    this.lightBgAccent = Colors.white70,
+    this.lightFg = Colors.white70,
+    this.lightFgAccent = Colors.white60,
+    this.lightText = Colors.grey,
+    this.lightTextImportant = ConstantColors.gray800,
+    this.lightPrimaryContrast = Colors.white70,
+    this.lightPrimaryContrastImportant = Colors.white,
+  
+    this.darkBg = Colors.black,
+    this.darkBgAccent = ConstantColors.gray1000,
+    this.darkFg = ConstantColors.gray800,
+    this.darkFgAccent = ConstantColors.gray700,
+    this.darkText = Colors.white70,
+    this.darkTextImportant = Colors.white,
+    this.darkPrimaryContras = Colors.white,
+    this.darkPrimaryContrast = ConstantColors.gray800,
+    this.darkPrimaryContrastImportant = Colors.black,
     this.primary = Colors.deepPurple,
     this.primaryAccent = Colors.deepPurpleAccent,
     this.secondary = Colors.deepOrange,

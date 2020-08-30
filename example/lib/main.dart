@@ -44,17 +44,24 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Example'),
       ),
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: <Widget>[
-            const Text('Is Dark Mode Enabled:'),
-            /// Extracted as a separate widget for performance optimization.
-            /// As a separate widget, it will rebuild independently from [MyHomePage].
-            ///
-            /// This is totally optional (and rarely needed).
-            /// Similarly, we could also use [Consumer] or [Selector].
-            const DarkModeEnabledText(),
+            context.watch<MaterialThemesManager>().getBackgroundGradient(BackgroundGradientType.MAIN_BG),
+            Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text('Is Dark Mode Enabled:'),
+                  /// Extracted as a separate widget for performance optimization.
+                  /// As a separate widget, it will rebuild independently from [MyHomePage].
+                  ///
+                  /// This is totally optional (and rarely needed).
+                  /// Similarly, we could also use [Consumer] or [Selector].
+                  const DarkModeEnabledText(),
+                ],
+              ),
+            ),
           ],
         ),
       ),

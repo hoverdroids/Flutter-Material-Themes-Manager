@@ -1,3 +1,4 @@
+## [0.0.9] - Add all color palette fields to constructor. Example shows background gradient changing.
 ## [0.0.8] - Fixed background gradient bug
 ## [0.0.7] - Added background gradients
 ## [0.0.6] - Updated Provider to 4+ and added an example to main
