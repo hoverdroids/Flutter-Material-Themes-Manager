@@ -1,3 +1,4 @@
+## [0.0.15] - Made colorPalette accessible from ThemeManager
 ## [0.0.14] - Added fontSizes base on Material Design guidelines
 ## [0.0.13] - Propagate elevation and icons size
 ## [0.0.12] - Added Card elevation and Icon sizes
