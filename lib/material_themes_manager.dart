@@ -13,13 +13,17 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   bool isDarkModeEnabled = false;
   ThemeGroup _darkThemeGroup = DarkThemeGroup();
   ThemeGroup _lightThemeGroup = LightThemeGroup();
-  ColorPalette colorPalette = ColorPalette();
+  ColorPalette _colorPalette = ColorPalette();
 
   updateColorPalette(ColorPalette colorPalette) {
     _darkThemeGroup.updateColorPalette(colorPalette);
     _lightThemeGroup.updateColorPalette(colorPalette);
-    this.colorPalette = colorPalette;
+    _colorPalette = colorPalette;
     notifyListeners();
+  }
+
+  ColorPalette colorPalette() {
+    return _colorPalette;
   }
   
   void updateDarkModeEnabled(bool isDarkModeEnabled) {
