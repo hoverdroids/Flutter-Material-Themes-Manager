@@ -1,3 +1,4 @@
+## [0.0.17] - Changed light card color to white instead of light gray
 ## [0.0.16] - Changed colorPalette to private field with public getter
 ## [0.0.15] - Made colorPalette accessible from ThemeManager
 ## [0.0.14] - Added fontSizes base on Material Design guidelines

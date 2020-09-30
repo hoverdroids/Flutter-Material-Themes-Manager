@@ -179,7 +179,7 @@ class ColorPalette {
     
     this.lightBg = Colors.white,
     this.lightBgAccent = Colors.white70,
-    this.lightFg = Colors.white70,
+    this.lightFg = Colors.white,
     this.lightFgAccent = Colors.white60,
     this.lightContrast = Colors.grey,
     this.lightContrastImportant = ConstantColors.gray800,
