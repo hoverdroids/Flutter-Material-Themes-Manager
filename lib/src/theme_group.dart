@@ -10,15 +10,23 @@ abstract class ThemeGroup {
     this.colorPalette = colorPalette;
   }
   
-  Widget backgroundGradient(BackgroundGradientType type) {
+  Widget backgroundGradient(
+    BackgroundGradientType type,
+    AlignmentGeometry begin,
+    AlignmentGeometry end,
+    List<double> stops,
+    List<double> opacities,
+    TileMode tileMode,
+    GradientTransform transform) {
+
     if (type == BackgroundGradientType.MAIN_BG) {
-      return mainBackgroundGradient();
+      return mainBackgroundGradient(begin, end, stops, opacities, tileMode, transform);
     } else if (type == BackgroundGradientType.MAIN_FG) {
-      return mainForegroundGradient();
+      return mainForegroundGradient(begin, end, stops, opacities, tileMode, transform);
     } else if (type == BackgroundGradientType.PRIMARY) {
-      return primaryGradient();
+      return primaryGradient(begin, end, stops, opacities, tileMode, transform);
     } else {
-      return secondaryGradient();
+      return secondaryGradient(begin, end, stops, opacities, tileMode, transform);
     }
   }
 
@@ -63,10 +71,20 @@ abstract class ThemeGroup {
   ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL});
   ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL});
 
-  Widget mainBackgroundGradient();
-  Widget mainForegroundGradient();
-  Widget primaryGradient();
-  Widget secondaryGradient();
+  Widget mainBackgroundGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
+  Widget mainForegroundGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
+  Widget primaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
+  Widget secondaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
+
+  /*Widget mainRadialBackgroundGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
+  Widget mainRadialForegroundGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
+  Widget primaryRadialGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
+  Widget secondaryRadialGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
+
+  Widget mainSweepBackgroundGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
+  Widget mainSweepForegroundGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
+  Widget primarySweepGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
+  Widget secondarySweepGradient({double beginOpacity = 1.0, double endOpacity = 1.0});*/
 
   FontWeight getFontWeight(Emphasis emphasis) {
     switch(emphasis) {

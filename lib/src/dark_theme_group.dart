@@ -1069,67 +1069,26 @@ class DarkThemeGroup extends ThemeGroup {
   }
 
   @override
-  Widget mainBackgroundGradient() {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            colorPalette.darkBg,
-            colorPalette.darkBgAccent,
-          ],
-        ),
-      ),
-    );
+  Widget mainBackgroundGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+    var colors = [colorPalette.darkBg, colorPalette.darkBgAccent];
+    return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
   }
 
   @override
-  Widget mainForegroundGradient() {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            colorPalette.darkFg,
-            colorPalette.darkFgAccent,
-          ],
-        ),
-      ),
-    );
+  Widget mainForegroundGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+    var colors = [colorPalette.darkFg, colorPalette.darkFgAccent];
+    return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
   }
 
   @override
-  Widget primaryGradient() {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            colorPalette.primary,
-            colorPalette.primaryAccent,
-          ],
-        ),
-      ),
-    );
+  Widget primaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+    var colors = [colorPalette.primary, colorPalette.primaryAccent];
+    return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
   }
 
   @override
-  Widget secondaryGradient() {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            colorPalette.secondary,
-            colorPalette.secondaryAccent,
-          ],
-        ),
-      ),
-    );
+  Widget secondaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+    var colors = [colorPalette.secondary, colorPalette.secondaryAccent];
+    return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
   }
-
 }

@@ -6,6 +6,7 @@ import 'package:material_themes_manager/src/colors.dart';
 import 'package:material_themes_manager/src/dark_theme_group.dart';
 import 'package:material_themes_manager/src/light_theme_group.dart';
 import 'package:material_themes_manager/src/theme_group.dart';
+import 'dart:math' as math;
 
 /// Mix-in [DiagnosticableTreeMixin] to have access to [debugFillProperties] for the devtool
 class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
@@ -56,8 +57,20 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
     return isDarkModeEnabled ? ThemeMode.dark : ThemeMode.light;
   }
 
-  Widget getBackgroundGradient(BackgroundGradientType type) {
-    return isDarkModeEnabled ? _darkThemeGroup.backgroundGradient(type) : _lightThemeGroup.backgroundGradient(type);
+  Widget getBackgroundGradient(
+      BackgroundGradientType type,
+      {
+        AlignmentGeometry begin,
+        AlignmentGeometry end,
+        List<double> stops,
+        List<double> opacities,
+        TileMode tileMode,
+        GradientTransform transform
+      }
+  ) {
+    return isDarkModeEnabled
+        ? _darkThemeGroup.backgroundGradient(type, begin, end, stops, opacities, tileMode, transform)
+        : _lightThemeGroup.backgroundGradient(type, begin, end, stops, opacities, tileMode, transform);
   }
 
   /// Makes `MaterialThemesManager` readable inside the devtools by listing all of its properties
@@ -88,6 +101,116 @@ enum BackgroundGradientType {
   MAIN_FG,
   PRIMARY,
   SECONDARY
+}
+
+List<Color> _applyOpacitiesToColors(List<Color> colors, List<double> opacities) {
+  var updatedColors = List<Color>();
+  for(var i = 0; i < colors.length; i++) {
+    var opacity = 1.0;
+    if (opacities == null || opacities.length == 0) {
+      //No opacity supplied, make everything visible
+      opacity = 1.0;
+    } else if (opacities.length == 1) {
+      //Only one opacity supplied, apply to all colors
+      opacity = opacities[0];
+    } else if (opacities.length == colors.length) {
+      //An opacity was supplied for each color; apply opacity individually
+      opacity = opacities[i];
+    } else {
+      //A different number of colors and opacities were supplied. Interpolate.
+      if (i == 0) {
+        opacity = opacities[0]; //first
+      } else if (i == colors.length - 1) {
+        opacity = opacities[opacities.length - 1]; //last
+      } else {
+        var step = opacities.length * 1.0 / colors.length; //in between
+        var left = (i * step).floor();
+        var right = left + 1;
+        opacity = (opacities[left] + opacities[right]) / 2.0;
+      }
+    }
+    updatedColors.add(colors[i].withOpacity(opacity));
+  }
+  return updatedColors;
+}
+
+Widget createSweepGradient(
+  List<Color> colors,
+  {
+    AlignmentGeometry center = Alignment.center,
+    double startAngle = 0.0,
+    double endAngle = math.pi * 2,
+    List<double> stops,
+    List<double> opacities,
+    tileMode = TileMode.clamp,
+    GradientTransform transform
+  }
+) {
+  return Container(
+    decoration: BoxDecoration(
+      gradient: SweepGradient(
+        colors: _applyOpacitiesToColors(colors, opacities),
+        center: center,
+        startAngle: startAngle,
+        endAngle: endAngle,
+        stops: stops,
+        tileMode: tileMode,
+        transform: transform
+      ),
+    ),
+  );
+}
+
+Widget createRadialGradient(
+    List<Color> colors,
+    {
+      AlignmentGeometry center = Alignment.center,
+      double radius = 0.5,
+      List<double> stops,
+      List<double> opacities,
+      tileMode = TileMode.clamp,
+      AlignmentGeometry focal,
+      double focalRadius = 0.0,
+      GradientTransform transform
+    }
+) {
+  return Container(
+    decoration: BoxDecoration(
+      gradient: RadialGradient(
+          colors: _applyOpacitiesToColors(colors, opacities),
+          center: center,
+          radius: radius,
+          stops: stops,
+          tileMode: tileMode,
+          focal: focal,
+          focalRadius: focalRadius,
+          transform: transform
+      ),
+    ),
+  );
+}
+
+Widget createLinearGradient(
+    List<Color> colors,
+    AlignmentGeometry begin,
+    AlignmentGeometry end,
+    List<double> stops,
+    List<double> opacities,
+    TileMode tileMode,
+    GradientTransform transform
+) {
+  return Container(
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        colors: _applyOpacitiesToColors(colors, opacities),
+        begin: begin != null ? begin : Alignment.topCenter,
+        end: end != null ? end : Alignment.bottomCenter,
+        stops: stops,
+        tileMode: tileMode != null ? tileMode : TileMode.clamp,
+        transform: transform
+      ),
+    ),
+  );
 }
 
 //https://material.io/design/environment/light-shadows.html#shadows
