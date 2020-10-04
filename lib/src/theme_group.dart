@@ -30,6 +30,49 @@ abstract class ThemeGroup {
     }
   }
 
+  Widget backgroundRadialGradient(
+      BackgroundGradientType type,
+      AlignmentGeometry center,
+      double radius,
+      List<double> stops,
+      List<double> opacities,
+      TileMode tileMode,
+      AlignmentGeometry focal,
+      double focalRadius,
+      GradientTransform transform) {
+
+    if (type == BackgroundGradientType.MAIN_BG) {
+      return mainBackgroundRadialGradient(center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+    } else if (type == BackgroundGradientType.MAIN_FG) {
+      return mainForegroundRadialGradient(center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+    } else if (type == BackgroundGradientType.PRIMARY) {
+      return primaryRadialGradient(center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+    } else {
+      return secondaryRadialGradient(center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+    }
+  }
+
+  Widget backgroundSweepGradient(
+      BackgroundGradientType type,
+      AlignmentGeometry center,
+      double startAngle,
+      double endAngle,
+      List<double> stops,
+      List<double> opacities,
+      TileMode tileMode,
+      GradientTransform transform) {
+
+    if (type == BackgroundGradientType.MAIN_BG) {
+      return mainBackgroundSweepGradient(center, startAngle, endAngle, stops, opacities, tileMode, transform);
+    } else if (type == BackgroundGradientType.MAIN_FG) {
+      return mainForegroundSweepGradient(center, startAngle, endAngle, stops, opacities, tileMode, transform);
+    } else if (type == BackgroundGradientType.PRIMARY) {
+      return primarySweepGradient(center, startAngle, endAngle, stops, opacities, tileMode, transform);
+    } else {
+      return secondarySweepGradient(center, startAngle, endAngle, stops, opacities, tileMode, transform);
+    }
+  }
+
   ThemeData theme(ThemeGroupType themeGroupType, {Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     if(themeGroupType == ThemeGroupType.MOM) {
       return mainOnMain(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
@@ -76,15 +119,15 @@ abstract class ThemeGroup {
   Widget primaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
   Widget secondaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
 
-  /*Widget mainRadialBackgroundGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
-  Widget mainRadialForegroundGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
-  Widget primaryRadialGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
-  Widget secondaryRadialGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
+  Widget mainBackgroundRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform);
+  Widget mainForegroundRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform);
+  Widget primaryRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform);
+  Widget secondaryRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform);
 
-  Widget mainSweepBackgroundGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
-  Widget mainSweepForegroundGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
-  Widget primarySweepGradient({double beginOpacity = 1.0, double endOpacity = 1.0});
-  Widget secondarySweepGradient({double beginOpacity = 1.0, double endOpacity = 1.0});*/
+  Widget mainBackgroundSweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
+  Widget mainForegroundSweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
+  Widget primarySweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
+  Widget secondarySweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
 
   FontWeight getFontWeight(Emphasis emphasis) {
     switch(emphasis) {

@@ -1,3 +1,4 @@
+## [0.0.19] - Added Radial and Sweep background gradients
 ## [0.0.18] - Passing through all linearGradient properties
 ## [0.0.17] - Changed light card color to white instead of light gray
 ## [0.0.16] - Changed colorPalette to private field with public getter

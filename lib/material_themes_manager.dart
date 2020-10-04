@@ -73,6 +73,41 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
         : _lightThemeGroup.backgroundGradient(type, begin, end, stops, opacities, tileMode, transform);
   }
 
+  Widget getBackgroundRadialGradient(
+      BackgroundGradientType type,
+      {
+        AlignmentGeometry center,
+        double radius,
+        List<double> stops,
+        List<double> opacities,
+        TileMode tileMode,
+        AlignmentGeometry focal,
+        double focalRadius,
+        GradientTransform transform
+      }
+    ) {
+    return isDarkModeEnabled
+        ? _darkThemeGroup.backgroundRadialGradient(type, center, radius, stops, opacities, tileMode, focal, focalRadius, transform)
+        : _lightThemeGroup.backgroundRadialGradient(type, center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+  }
+
+  Widget getBackgroundSweepGradient(
+      BackgroundGradientType type,
+      {
+        AlignmentGeometry center,
+        double startAngle,
+        double endAngle,
+        List<double> stops,
+        List<double> opacities,
+        TileMode tileMode,
+        GradientTransform transform
+      }
+  ) {
+    return isDarkModeEnabled
+        ? _darkThemeGroup.backgroundSweepGradient(type, center, startAngle, endAngle, stops, opacities, tileMode, transform)
+        : _lightThemeGroup.backgroundSweepGradient(type, center, startAngle, endAngle, stops, opacities, tileMode, transform);
+  }
+
   /// Makes `MaterialThemesManager` readable inside the devtools by listing all of its properties
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -136,25 +171,23 @@ List<Color> _applyOpacitiesToColors(List<Color> colors, List<double> opacities) 
 
 Widget createSweepGradient(
   List<Color> colors,
-  {
-    AlignmentGeometry center = Alignment.center,
-    double startAngle = 0.0,
-    double endAngle = math.pi * 2,
-    List<double> stops,
-    List<double> opacities,
-    tileMode = TileMode.clamp,
-    GradientTransform transform
-  }
+  AlignmentGeometry center,
+  double startAngle,
+  double endAngle,
+  List<double> stops,
+  List<double> opacities,
+  TileMode tileMode,
+  GradientTransform transform
 ) {
   return Container(
     decoration: BoxDecoration(
       gradient: SweepGradient(
         colors: _applyOpacitiesToColors(colors, opacities),
-        center: center,
-        startAngle: startAngle,
-        endAngle: endAngle,
+        center: center != null ? center : Alignment.center,
+        startAngle: startAngle != null ? startAngle : 0.0,
+        endAngle: endAngle != null ? endAngle :math.pi * 2,
         stops: stops,
-        tileMode: tileMode,
+        tileMode: tileMode != null ? tileMode : TileMode.clamp,
         transform: transform
       ),
     ),
@@ -163,27 +196,25 @@ Widget createSweepGradient(
 
 Widget createRadialGradient(
     List<Color> colors,
-    {
-      AlignmentGeometry center = Alignment.center,
-      double radius = 0.5,
-      List<double> stops,
-      List<double> opacities,
-      tileMode = TileMode.clamp,
-      AlignmentGeometry focal,
-      double focalRadius = 0.0,
-      GradientTransform transform
-    }
+    AlignmentGeometry center,
+    double radius,
+    List<double> stops,
+    List<double> opacities,
+    TileMode tileMode,
+    AlignmentGeometry focal,
+    double focalRadius,
+    GradientTransform transform
 ) {
   return Container(
     decoration: BoxDecoration(
       gradient: RadialGradient(
           colors: _applyOpacitiesToColors(colors, opacities),
-          center: center,
-          radius: radius,
+          center: center != null ? center : Alignment.center,
+          radius: radius != null ? radius : 0.5,
           stops: stops,
-          tileMode: tileMode,
+          tileMode: tileMode != null ? tileMode : TileMode.clamp,
           focal: focal,
-          focalRadius: focalRadius,
+          focalRadius: focalRadius != null ? focalRadius : 0.0,
           transform: transform
       ),
     ),

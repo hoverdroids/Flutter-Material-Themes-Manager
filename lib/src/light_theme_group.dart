@@ -1066,9 +1066,33 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
+  Widget mainBackgroundRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform) {
+    var colors = [colorPalette.lightBg, colorPalette.lightBgAccent];
+    return createRadialGradient(colors, center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+  }
+
+  @override
+  Widget mainBackgroundSweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+    var colors = [colorPalette.lightBg, colorPalette.lightBgAccent];
+    return createSweepGradient(colors, center, startAngle, endAngle, stops, opacities, tileMode, transform);
+  }
+
+  @override
   Widget mainForegroundGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
     var colors = [colorPalette.lightFg, colorPalette.lightFgAccent];
     return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
+  }
+
+  @override
+  Widget mainForegroundRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform) {
+    var colors = [colorPalette.lightFg, colorPalette.lightFgAccent];
+    return createRadialGradient(colors, center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+  }
+
+  @override
+  Widget mainForegroundSweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+    var colors = [colorPalette.lightFg, colorPalette.lightFgAccent];
+    return createSweepGradient(colors, center, startAngle, endAngle, stops, opacities, tileMode, transform);
   }
 
   @override
@@ -1078,9 +1102,33 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
+  Widget primaryRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform) {
+    var colors = [colorPalette.primary, colorPalette.primaryAccent];
+    return createRadialGradient(colors, center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+  }
+
+  @override
+  Widget primarySweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+    var colors = [colorPalette.primary, colorPalette.primaryAccent];
+    return createSweepGradient(colors, center, startAngle, endAngle, stops, opacities, tileMode, transform);
+  }
+
+  @override
   Widget secondaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
     var colors = [colorPalette.secondary, colorPalette.secondaryAccent];
     return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
+  }
+
+  @override
+  Widget secondaryRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform) {
+    var colors = [colorPalette.secondary, colorPalette.secondaryAccent];
+    return createRadialGradient(colors, center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+  }
+
+  @override
+  Widget secondarySweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+    var colors = [colorPalette.secondary, colorPalette.secondaryAccent];
+    return createSweepGradient(colors, center, startAngle, endAngle, stops, opacities, tileMode, transform);
   }
 }
 
