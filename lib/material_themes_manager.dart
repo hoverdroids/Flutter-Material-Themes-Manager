@@ -1,12 +1,14 @@
 library material_themes_manager;
 
+import 'dart:math' as math;
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:material_themes_manager/src/colors.dart';
 import 'package:material_themes_manager/src/dark_theme_group.dart';
 import 'package:material_themes_manager/src/light_theme_group.dart';
 import 'package:material_themes_manager/src/theme_group.dart';
-import 'dart:math' as math;
 
 /// Mix-in [DiagnosticableTreeMixin] to have access to [debugFillProperties] for the devtool
 class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
@@ -56,6 +58,37 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   ThemeMode getThemeMode() {
     return isDarkModeEnabled ? ThemeMode.dark : ThemeMode.light;
   }
+
+  List<BoxShadow> getShadow(
+      {
+        ShadowType shadowType = ShadowType.DARK,
+        LightSourcePosition lightSourcePosition = LightSourcePosition.TOP_LEFT,
+        ShadowIntensity shadowIntensity = ShadowIntensity.NORMAL,
+        ShadowHardness shadowHardness = ShadowHardness.NORMAL
+      }
+  ) {
+    switch (shadowType) {
+      case ShadowType.PRIMARY:
+        return createThemedShadow(_colorPalette.primary, lightSourcePosition, shadowIntensity, shadowHardness);
+      case ShadowType.SECONDARY:
+        return createThemedShadow(_colorPalette.secondary, lightSourcePosition, shadowIntensity, shadowHardness);
+      case ShadowType.LIGHT:
+        return createThemedShadow(Colors.white, lightSourcePosition, shadowIntensity, shadowHardness);
+      default:
+        return createThemedShadow(Colors.black54, lightSourcePosition, shadowIntensity, shadowHardness);
+    }
+  }
+
+  //TODO
+  /*List<Shadow> getTextShadow() {
+    <Shadow>[
+      Shadow(
+          blurRadius: 18.0,
+          color: Colors.black87,
+          offset: Offset.fromDirection(120, 12)
+      )
+    ]
+  }*/
 
   Widget getBackgroundGradient(
       BackgroundGradientType type,
@@ -131,42 +164,109 @@ enum ThemeGroupType {
   SOI,  //SECONDARY_ON_IMAGE
 }
 
+enum LightSourcePosition {
+  TOP_LEFT,
+  TOP,
+  TOP_RIGHT,
+  RIGHT,
+  BOTTOM_RIGHT,
+  BOTTOM,
+  BOTTOM_LEFT,
+  LEFT,
+  CENTER
+}
+
+Offset getOffset(LightSourcePosition lightSourcePosition) {
+  if(lightSourcePosition == LightSourcePosition.TOP_LEFT) {
+      return Offset(-4.0, -4.0);
+  } else if(lightSourcePosition == LightSourcePosition.TOP) {
+    return Offset(0.0, -4.0);
+  } else if(lightSourcePosition == LightSourcePosition.TOP_RIGHT) {
+    return Offset(4.0, -4.0);
+  } else if(lightSourcePosition == LightSourcePosition.RIGHT) {
+    return Offset(4.0, 0.0);
+  } else if(lightSourcePosition == LightSourcePosition.BOTTOM_RIGHT) {
+    return Offset(4.0, 4.0);
+  } else if(lightSourcePosition == LightSourcePosition.BOTTOM) {
+    return Offset(0.0, 4.0);
+  } else if(lightSourcePosition == LightSourcePosition.BOTTOM_LEFT) {
+    return Offset(-4.0, 4.0);
+  } else if(lightSourcePosition == LightSourcePosition.LEFT) {
+    return Offset(-4.0, 0.0);
+  } else {
+    return Offset(0.0, 0.0);
+  }
+}
+
+enum ShadowIntensity {
+  NONE,
+  SOFT,
+  NORMAL,
+  DARK
+}
+
+double getShadowOpacity(ShadowIntensity intensity) {
+  if (intensity == ShadowIntensity.NONE) {
+    return 0.0;
+  } else if (intensity == ShadowIntensity.SOFT) {
+    return 25.0;
+  } else if (intensity == ShadowIntensity.NORMAL) {
+    return 75.0;
+  } else {
+    return 100.0;
+  }
+}
+
+enum ShadowHardness {
+  HARD,
+  NORMAL,
+  SOFT
+}
+
+double getShadowBlurRadius(ShadowHardness sharpness) {
+  if (sharpness == ShadowHardness.HARD) {
+    return 0.0;
+  } else if (sharpness == ShadowHardness.NORMAL) {
+    return 4.0;
+  } else {
+    return 10.0;
+  }
+}
+
+enum ShadowType {
+  LIGHT,    //white shadow
+  DARK,     //normal shadows, black on anything
+  PRIMARY,  //Primary hue
+  SECONDARY //Secondary hue
+}
+
+List<BoxShadow> createThemedShadow(Color color, LightSourcePosition lightSourcePosition, ShadowIntensity shadowIntensity, ShadowHardness shadowHardness) {
+  var offset = getOffset(lightSourcePosition);
+  var shadowColor = color.withOpacity(getShadowOpacity(shadowIntensity));
+  var blurRadius = getShadowBlurRadius(shadowHardness);
+  return createShadow(color: color, offset: offset, blurRadius: blurRadius, spreadRadius: 0.0);
+}
+
+List<BoxShadow> createShadow({Color color, Offset offset, double blurRadius, double spreadRadius}) {
+  return [
+    BoxShadow(
+        color: color != null ? color : Colors.black54,
+        offset: offset != null ? offset : Offset(0.0, 4.0),
+        blurRadius: blurRadius != null ? blurRadius : 10.0,
+        spreadRadius: spreadRadius != null ? spreadRadius : 0.0
+    ),
+  ];
+}
+
+Widget createTextShadow() {
+
+}
+
 enum BackgroundGradientType {
   MAIN_BG,
   MAIN_FG,
   PRIMARY,
   SECONDARY
-}
-
-List<Color> _applyOpacitiesToColors(List<Color> colors, List<double> opacities) {
-  var updatedColors = List<Color>();
-  for(var i = 0; i < colors.length; i++) {
-    var opacity = 1.0;
-    if (opacities == null || opacities.length == 0) {
-      //No opacity supplied, make everything visible
-      opacity = 1.0;
-    } else if (opacities.length == 1) {
-      //Only one opacity supplied, apply to all colors
-      opacity = opacities[0];
-    } else if (opacities.length == colors.length) {
-      //An opacity was supplied for each color; apply opacity individually
-      opacity = opacities[i];
-    } else {
-      //A different number of colors and opacities were supplied. Interpolate.
-      if (i == 0) {
-        opacity = opacities[0]; //first
-      } else if (i == colors.length - 1) {
-        opacity = opacities[opacities.length - 1]; //last
-      } else {
-        var step = opacities.length * 1.0 / colors.length; //in between
-        var left = (i * step).floor();
-        var right = left + 1;
-        opacity = (opacities[left] + opacities[right]) / 2.0;
-      }
-    }
-    updatedColors.add(colors[i].withOpacity(opacity));
-  }
-  return updatedColors;
 }
 
 Widget createSweepGradient(
@@ -244,15 +344,75 @@ Widget createLinearGradient(
   );
 }
 
+List<Color> _applyOpacitiesToColors(List<Color> colors, List<double> opacities) {
+  var updatedColors = List<Color>();
+  for(var i = 0; i < colors.length; i++) {
+    var opacity = 1.0;
+    if (opacities == null || opacities.length == 0) {
+      //No opacity supplied, make everything visible
+      opacity = 1.0;
+    } else if (opacities.length == 1) {
+      //Only one opacity supplied, apply to all colors
+      opacity = opacities[0];
+    } else if (opacities.length == colors.length) {
+      //An opacity was supplied for each color; apply opacity individually
+      opacity = opacities[i];
+    } else {
+      //A different number of colors and opacities were supplied. Interpolate.
+      if (i == 0) {
+        opacity = opacities[0]; //first
+      } else if (i == colors.length - 1) {
+        opacity = opacities[opacities.length - 1]; //last
+      } else {
+        var step = opacities.length * 1.0 / colors.length; //in between
+        var left = (i * step).floor();
+        var right = left + 1;
+        opacity = (opacities[left] + opacities[right]) / 2.0;
+      }
+    }
+    updatedColors.add(colors[i].withOpacity(opacity));
+  }
+  return updatedColors;
+}
+
 //https://material.io/design/environment/light-shadows.html#shadows
 //https://material.io/design/environment/elevation.html
+//https://material.io/design/environment/elevation.html#elevation-in-material-design
 enum ElevationLevel {
   FLAT, LOW, MEDIUM, HIGH, EXTREME
+}
+
+double getElevation(ElevationLevel elevation) {
+  switch(elevation) {
+    case ElevationLevel.EXTREME:
+      return 24;
+    case ElevationLevel.HIGH:
+      return 12;
+    case ElevationLevel.MEDIUM:
+      return 6;
+    case ElevationLevel.LOW:
+      return 2;
+    default:
+      return 0;
+  }
 }
 
 //https://google.github.io/material-design-icons/
 enum IconSize {
   MINI, SMALL, MEDIUM, LARGE
+}
+
+double getIconSize(IconSize size) {
+  switch(size) {
+    case IconSize.LARGE:
+      return 48;
+    case IconSize.MEDIUM:
+      return 36;
+    case IconSize.SMALL:
+      return 24;
+    default:
+      return 18;
+  }
 }
 
 //https://material.io/components/buttons#hierarchy-and-placement
@@ -262,6 +422,48 @@ enum Emphasis {
 
 enum FontSize {
   H1, H2, H3, H4, H5, TITLE, SUB1, SUB2, BODY1, BODY2, CAPTION, OVERLINE
+}
+
+double getFontSize(FontSize size) {
+  switch(size) {
+    case FontSize.H1:
+      return 96;
+    case FontSize.H2:
+      return 60;
+    case FontSize.H3:
+      return 48;
+    case FontSize.H4:
+      return 34;
+    case FontSize.H5:
+      return 24;
+    case FontSize.TITLE:
+      return 20;
+    case FontSize.SUB1:
+      return 16;
+    case FontSize.SUB2:
+      return 14;
+    case FontSize.BODY1:
+      return 16;
+    case FontSize.BODY2:
+      return 14;
+    case FontSize.CAPTION:
+      return 12;
+    default://OVERLINE
+      return 10;
+  }
+}
+
+FontWeight getFontWeight(Emphasis emphasis) {
+  switch(emphasis) {
+    case Emphasis.HIGH:
+      return FontWeight.bold;//w700
+    case Emphasis.MEDIUM:
+      return FontWeight.w600;
+    case Emphasis.LOW:
+      return FontWeight.w500;
+    default:
+      return FontWeight.normal;//w400
+  }
 }
 
 //The default color palette will make the app look like a wireframe
