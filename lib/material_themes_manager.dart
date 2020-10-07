@@ -61,39 +61,50 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
 
   BoxDecoration getBoxDecorationShadow(
       {
-        ShadowType shadowType = ShadowType.DARK,
-        LightSourcePosition lightSourcePosition = LightSourcePosition.TOP_LEFT,
-        ShadowIntensity shadowIntensity = ShadowIntensity.NORMAL,
-        ShadowHardness shadowHardness = ShadowHardness.NORMAL
+        Color color,
+        BorderRadius borderRadius,
+        ShadowType shadowType,
+        LightSourcePosition lightSourcePosition,
+        ShadowIntensity shadowIntensity,
+        ShadowHardness shadowHardness,
       }
   ) {
+    
     return BoxDecoration(
+        color: color != null ? color : Colors.transparent,
+        borderRadius: borderRadius != null ? borderRadius : BorderRadius.circular(20.0),
         boxShadow: getBoxShadow(
-          shadowType: shadowType,
-          lightSourcePosition: lightSourcePosition,
-          shadowIntensity: shadowIntensity,
-          shadowHardness: shadowHardness
+          shadowType: shadowType != null ? shadowType : ShadowType.DARK,
+          lightSourcePosition: lightSourcePosition != null ? lightSourcePosition : LightSourcePosition.TOP_LEFT,
+          shadowIntensity: shadowIntensity != null ? shadowIntensity : ShadowIntensity.NORMAL,
+          shadowHardness: shadowHardness != null ? shadowHardness : ShadowHardness.NORMAL
         )
     );
   }
 
   List<BoxShadow> getBoxShadow(
       {
-        ShadowType shadowType = ShadowType.DARK,
-        LightSourcePosition lightSourcePosition = LightSourcePosition.TOP_LEFT,
-        ShadowIntensity shadowIntensity = ShadowIntensity.NORMAL,
-        ShadowHardness shadowHardness = ShadowHardness.NORMAL
+        ShadowType shadowType,
+        LightSourcePosition lightSourcePosition,
+        ShadowIntensity shadowIntensity,
+        ShadowHardness shadowHardness
       }
   ) {
-    switch (shadowType) {
+    
+    var type = shadowType != null ? shadowType : ShadowType.DARK;
+    var position = lightSourcePosition != null ? lightSourcePosition : LightSourcePosition.TOP_LEFT;
+    var intensity = shadowIntensity != null ? shadowIntensity : ShadowIntensity.NORMAL;
+    var hardness = shadowHardness != null ? shadowHardness : ShadowHardness.NORMAL;
+    
+    switch (type) {
       case ShadowType.PRIMARY:
-        return createThemedShadow(_colorPalette.primary, lightSourcePosition, shadowIntensity, shadowHardness);
+        return createThemedShadow(_colorPalette.primary, position, intensity, hardness);
       case ShadowType.SECONDARY:
-        return createThemedShadow(_colorPalette.secondary, lightSourcePosition, shadowIntensity, shadowHardness);
+        return createThemedShadow(_colorPalette.secondary, position, intensity, hardness);
       case ShadowType.LIGHT:
-        return createThemedShadow(Colors.white, lightSourcePosition, shadowIntensity, shadowHardness);
+        return createThemedShadow(Colors.white, position, intensity, hardness);
       default:
-        return createThemedShadow(Colors.black54, lightSourcePosition, shadowIntensity, shadowHardness);
+        return createThemedShadow(Colors.black54, position, intensity, hardness);
     }
   }
 
@@ -258,7 +269,12 @@ enum ShadowType {
   SECONDARY //Secondary hue
 }
 
-List<BoxShadow> createThemedShadow(Color color, LightSourcePosition lightSourcePosition, ShadowIntensity shadowIntensity, ShadowHardness shadowHardness) {
+List<BoxShadow> createThemedShadow(
+    Color color,
+    LightSourcePosition lightSourcePosition,
+    ShadowIntensity shadowIntensity,
+    ShadowHardness shadowHardness) {
+
   var offset = getOffset(lightSourcePosition);
   var shadowColor = color.withOpacity(getShadowOpacity(shadowIntensity));
   var blurRadius = getShadowBlurRadius(shadowHardness);
