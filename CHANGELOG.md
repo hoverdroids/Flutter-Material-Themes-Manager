@@ -1,3 +1,4 @@
+## [0.0.22] - Removed white overlay from shadow
 ## [0.0.21] - Fixed bug causing null when getting shadow
 ## [0.0.20] - Added getShadow method
 ## [0.0.19] - Added Radial and Sweep background gradients

@@ -68,7 +68,6 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
       }
   ) {
     return BoxDecoration(
-      color: Colors.white,
         boxShadow: getBoxShadow(
           shadowType: shadowType,
           lightSourcePosition: lightSourcePosition,
