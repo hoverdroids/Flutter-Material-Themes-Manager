@@ -61,6 +61,16 @@ class MyHomePage extends StatelessWidget {
                   /// This is totally optional (and rarely needed).
                   /// Similarly, we could also use [Consumer] or [Selector].
                   const DarkModeEnabledText(),
+                  Container(
+                    width: 150,
+                    height: 150,
+                    decoration: context.watch<MaterialThemesManager>().getBoxDecorationShadow(
+                        //lightSourcePosition: LightSourcePosition.CENTER,
+                        //shadowType: ShadowType.SECONDARY,
+                        //shadowHardness: ShadowHardness.SOFT,
+                        shadowIntensity: ShadowIntensity.DARK
+                      ),
+                    ),
                 ],
               ),
             ),

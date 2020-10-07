@@ -59,7 +59,26 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
     return isDarkModeEnabled ? ThemeMode.dark : ThemeMode.light;
   }
 
-  List<BoxShadow> getShadow(
+  BoxDecoration getBoxDecorationShadow(
+      {
+        ShadowType shadowType = ShadowType.DARK,
+        LightSourcePosition lightSourcePosition = LightSourcePosition.TOP_LEFT,
+        ShadowIntensity shadowIntensity = ShadowIntensity.NORMAL,
+        ShadowHardness shadowHardness = ShadowHardness.NORMAL
+      }
+  ) {
+    return BoxDecoration(
+      color: Colors.white,
+        boxShadow: getBoxShadow(
+          shadowType: shadowType,
+          lightSourcePosition: lightSourcePosition,
+          shadowIntensity: shadowIntensity,
+          shadowHardness: shadowHardness
+        )
+    );
+  }
+
+  List<BoxShadow> getBoxShadow(
       {
         ShadowType shadowType = ShadowType.DARK,
         LightSourcePosition lightSourcePosition = LightSourcePosition.TOP_LEFT,
@@ -178,21 +197,21 @@ enum LightSourcePosition {
 
 Offset getOffset(LightSourcePosition lightSourcePosition) {
   if(lightSourcePosition == LightSourcePosition.TOP_LEFT) {
-      return Offset(-4.0, -4.0);
+      return Offset(4.0, 4.0);
   } else if(lightSourcePosition == LightSourcePosition.TOP) {
-    return Offset(0.0, -4.0);
-  } else if(lightSourcePosition == LightSourcePosition.TOP_RIGHT) {
-    return Offset(4.0, -4.0);
-  } else if(lightSourcePosition == LightSourcePosition.RIGHT) {
-    return Offset(4.0, 0.0);
-  } else if(lightSourcePosition == LightSourcePosition.BOTTOM_RIGHT) {
-    return Offset(4.0, 4.0);
-  } else if(lightSourcePosition == LightSourcePosition.BOTTOM) {
     return Offset(0.0, 4.0);
-  } else if(lightSourcePosition == LightSourcePosition.BOTTOM_LEFT) {
+  } else if(lightSourcePosition == LightSourcePosition.TOP_RIGHT) {
     return Offset(-4.0, 4.0);
-  } else if(lightSourcePosition == LightSourcePosition.LEFT) {
+  } else if(lightSourcePosition == LightSourcePosition.RIGHT) {
     return Offset(-4.0, 0.0);
+  } else if(lightSourcePosition == LightSourcePosition.BOTTOM_RIGHT) {
+    return Offset(-4.0, -4.0);
+  } else if(lightSourcePosition == LightSourcePosition.BOTTOM) {
+    return Offset(0.0, -4.0);
+  } else if(lightSourcePosition == LightSourcePosition.BOTTOM_LEFT) {
+    return Offset(4.0, -4.0);
+  } else if(lightSourcePosition == LightSourcePosition.LEFT) {
+    return Offset(4.0, 0.0);
   } else {
     return Offset(0.0, 0.0);
   }
@@ -209,11 +228,11 @@ double getShadowOpacity(ShadowIntensity intensity) {
   if (intensity == ShadowIntensity.NONE) {
     return 0.0;
   } else if (intensity == ShadowIntensity.SOFT) {
-    return 25.0;
+    return 0.2;
   } else if (intensity == ShadowIntensity.NORMAL) {
-    return 75.0;
+    return 0.4;
   } else {
-    return 100.0;
+    return 0.65;
   }
 }
 
@@ -244,6 +263,7 @@ List<BoxShadow> createThemedShadow(Color color, LightSourcePosition lightSourceP
   var offset = getOffset(lightSourcePosition);
   var shadowColor = color.withOpacity(getShadowOpacity(shadowIntensity));
   var blurRadius = getShadowBlurRadius(shadowHardness);
+
   return createShadow(color: color, offset: offset, blurRadius: blurRadius, spreadRadius: 0.0);
 }
 
@@ -256,10 +276,6 @@ List<BoxShadow> createShadow({Color color, Offset offset, double blurRadius, dou
         spreadRadius: spreadRadius != null ? spreadRadius : 0.0
     ),
   ];
-}
-
-Widget createTextShadow() {
-
 }
 
 enum BackgroundGradientType {
