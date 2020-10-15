@@ -1,3 +1,4 @@
+## [0.0.24] - Set themeData primary colors to the same as the color palette
 ## [0.0.23] - Added border radius and foreground color
 ## [0.0.22] - Removed white overlay from shadow
 ## [0.0.21] - Fixed bug causing null when getting shadow

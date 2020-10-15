@@ -8,6 +8,11 @@ class LightThemeGroup extends ThemeGroup {
   @override
   ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
+      primaryColor: colorPalette.primary,
+      primarySwatch: colorPalette.primary,
+      primaryColorDark: colorPalette.primary,
+      primaryColorLight: colorPalette.primary,
+      visualDensity: VisualDensity.adaptivePlatformDensity,
       scaffoldBackgroundColor: colorPalette.lightBg,
       appBarTheme: AppBarTheme(
         color: colorPalette.lightBg,
