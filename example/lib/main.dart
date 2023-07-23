@@ -35,14 +35,13 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   //We are consuming the theme change at the app level because light/dark mode swap
   //affects every widget's appearance in the app
-  const MyHomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: context.watch<MaterialThemesManager>().getTheme(ThemeGroupType.POM).appBarTheme.color,
+        backgroundColor: context.watch<MaterialThemesManager>().getTheme(ThemeGroupType.POM).appBarTheme.backgroundColor,
         title: const Text('Example'),
       ),
       body: Center(
@@ -60,7 +59,7 @@ class MyHomePage extends StatelessWidget {
                   ///
                   /// This is totally optional (and rarely needed).
                   /// Similarly, we could also use [Consumer] or [Selector].
-                  const DarkModeEnabledText(),
+                  DarkModeEnabledText(),
                   Container(
                     width: 150,
                     height: 150,
@@ -87,8 +86,6 @@ class MyHomePage extends StatelessWidget {
 }
 
 class DarkModeEnabledText extends StatelessWidget {
-  const DarkModeEnabledText({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Text(

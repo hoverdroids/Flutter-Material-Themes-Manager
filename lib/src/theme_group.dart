@@ -12,12 +12,12 @@ abstract class ThemeGroup {
   
   Widget backgroundGradient(
     BackgroundGradientType type,
-    AlignmentGeometry begin,
-    AlignmentGeometry end,
-    List<double> stops,
-    List<double> opacities,
-    TileMode tileMode,
-    GradientTransform transform) {
+    AlignmentGeometry? begin,
+    AlignmentGeometry? end,
+    List<double>? stops,
+    List<double>? opacities,
+    TileMode? tileMode,
+    GradientTransform? transform) {
 
     if (type == BackgroundGradientType.MAIN_BG) {
       return mainBackgroundGradient(begin, end, stops, opacities, tileMode, transform);
@@ -32,14 +32,14 @@ abstract class ThemeGroup {
 
   Widget backgroundRadialGradient(
       BackgroundGradientType type,
-      AlignmentGeometry center,
-      double radius,
-      List<double> stops,
-      List<double> opacities,
-      TileMode tileMode,
-      AlignmentGeometry focal,
-      double focalRadius,
-      GradientTransform transform) {
+      AlignmentGeometry? center,
+      double? radius,
+      List<double>? stops,
+      List<double>? opacities,
+      TileMode? tileMode,
+      AlignmentGeometry? focal,
+      double? focalRadius,
+      GradientTransform? transform) {
 
     if (type == BackgroundGradientType.MAIN_BG) {
       return mainBackgroundRadialGradient(center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
@@ -54,13 +54,13 @@ abstract class ThemeGroup {
 
   Widget backgroundSweepGradient(
       BackgroundGradientType type,
-      AlignmentGeometry center,
-      double startAngle,
-      double endAngle,
-      List<double> stops,
-      List<double> opacities,
-      TileMode tileMode,
-      GradientTransform transform) {
+      AlignmentGeometry? center,
+      double? startAngle,
+      double? endAngle,
+      List<double>? stops,
+      List<double>? opacities,
+      TileMode? tileMode,
+      GradientTransform? transform) {
 
     if (type == BackgroundGradientType.MAIN_BG) {
       return mainBackgroundSweepGradient(center, startAngle, endAngle, stops, opacities, tileMode, transform);
@@ -114,18 +114,18 @@ abstract class ThemeGroup {
   ThemeData primaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL});
   ThemeData secondaryOnImage({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL});
 
-  Widget mainBackgroundGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
-  Widget mainForegroundGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
-  Widget primaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
-  Widget secondaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
+  Widget mainBackgroundGradient(AlignmentGeometry? begin, AlignmentGeometry? end, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform);
+  Widget mainForegroundGradient(AlignmentGeometry? begin, AlignmentGeometry? end, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform);
+  Widget primaryGradient(AlignmentGeometry? begin, AlignmentGeometry? end, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform);
+  Widget secondaryGradient(AlignmentGeometry? begin, AlignmentGeometry? end, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform);
 
-  Widget mainBackgroundRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform);
-  Widget mainForegroundRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform);
-  Widget primaryRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform);
-  Widget secondaryRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform);
+  Widget mainBackgroundRadialGradient(AlignmentGeometry? center, double? radius, List<double>? stops, List<double>? opacities, TileMode? tileMode, AlignmentGeometry? focal, double? focalRadius, GradientTransform? transform);
+  Widget mainForegroundRadialGradient(AlignmentGeometry? center, double? radius, List<double>? stops, List<double>? opacities, TileMode? tileMode, AlignmentGeometry? focal, double? focalRadius, GradientTransform? transform);
+  Widget primaryRadialGradient(AlignmentGeometry? center, double? radius, List<double>? stops, List<double>? opacities, TileMode? tileMode, AlignmentGeometry? focal, double? focalRadius, GradientTransform? transform);
+  Widget secondaryRadialGradient(AlignmentGeometry? center, double? radius, List<double>? stops, List<double>? opacities, TileMode? tileMode, AlignmentGeometry? focal, double? focalRadius, GradientTransform? transform);
 
-  Widget mainBackgroundSweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
-  Widget mainForegroundSweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
-  Widget primarySweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
-  Widget secondarySweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform);
+  Widget mainBackgroundSweepGradient(AlignmentGeometry? center, double? startAngle, double? endAngle, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform);
+  Widget mainForegroundSweepGradient(AlignmentGeometry? center, double? startAngle, double? endAngle, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform);
+  Widget primarySweepGradient(AlignmentGeometry? center, double? startAngle, double? endAngle, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform);
+  Widget secondarySweepGradient(AlignmentGeometry? center, double? startAngle, double? endAngle, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform);
 }

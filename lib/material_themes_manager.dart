@@ -2,7 +2,6 @@ library material_themes_manager;
 
 import 'dart:math' as math;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:material_themes_manager/src/colors.dart';
@@ -61,40 +60,40 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
 
   BoxDecoration getBoxDecorationShadow(
       {
-        Color color,
-        BorderRadius borderRadius,
-        ShadowType shadowType,
-        LightSourcePosition lightSourcePosition,
-        ShadowIntensity shadowIntensity,
-        ShadowHardness shadowHardness,
+        Color color = Colors.transparent,
+        BorderRadius borderRadius = const BorderRadius.all(Radius.circular(20.0)),
+        ShadowType shadowType = ShadowType.DARK,
+        LightSourcePosition lightSourcePosition = LightSourcePosition.TOP_LEFT,
+        ShadowIntensity shadowIntensity = ShadowIntensity.NORMAL,
+        ShadowHardness shadowHardness = ShadowHardness.NORMAL,
       }
   ) {
     
     return BoxDecoration(
-        color: color != null ? color : Colors.transparent,
-        borderRadius: borderRadius != null ? borderRadius : BorderRadius.circular(20.0),
+        color: color,
+        borderRadius: borderRadius,
         boxShadow: getBoxShadow(
-          shadowType: shadowType != null ? shadowType : ShadowType.DARK,
-          lightSourcePosition: lightSourcePosition != null ? lightSourcePosition : LightSourcePosition.TOP_LEFT,
-          shadowIntensity: shadowIntensity != null ? shadowIntensity : ShadowIntensity.NORMAL,
-          shadowHardness: shadowHardness != null ? shadowHardness : ShadowHardness.NORMAL
+          shadowType: shadowType,
+          lightSourcePosition: lightSourcePosition,
+          shadowIntensity: shadowIntensity,
+          shadowHardness: shadowHardness
         )
     );
   }
 
   List<BoxShadow> getBoxShadow(
       {
-        ShadowType shadowType,
-        LightSourcePosition lightSourcePosition,
-        ShadowIntensity shadowIntensity,
-        ShadowHardness shadowHardness
+        ShadowType shadowType = ShadowType.DARK,
+        LightSourcePosition lightSourcePosition = LightSourcePosition.TOP_LEFT,
+        ShadowIntensity shadowIntensity = ShadowIntensity.NORMAL,
+        ShadowHardness shadowHardness = ShadowHardness.NORMAL
       }
   ) {
     
-    var type = shadowType != null ? shadowType : ShadowType.DARK;
-    var position = lightSourcePosition != null ? lightSourcePosition : LightSourcePosition.TOP_LEFT;
-    var intensity = shadowIntensity != null ? shadowIntensity : ShadowIntensity.NORMAL;
-    var hardness = shadowHardness != null ? shadowHardness : ShadowHardness.NORMAL;
+    var type = shadowType;
+    var position = lightSourcePosition;
+    var intensity = shadowIntensity;
+    var hardness = shadowHardness;
     
     switch (type) {
       case ShadowType.PRIMARY:
@@ -122,12 +121,12 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   Widget getBackgroundGradient(
       BackgroundGradientType type,
       {
-        AlignmentGeometry begin,
-        AlignmentGeometry end,
-        List<double> stops,
-        List<double> opacities,
-        TileMode tileMode,
-        GradientTransform transform
+        AlignmentGeometry? begin,
+        AlignmentGeometry? end,
+        List<double>? stops,
+        List<double>? opacities,
+        TileMode? tileMode,
+        GradientTransform? transform
       }
   ) {
     return isDarkModeEnabled
@@ -138,14 +137,14 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   Widget getBackgroundRadialGradient(
       BackgroundGradientType type,
       {
-        AlignmentGeometry center,
-        double radius,
-        List<double> stops,
-        List<double> opacities,
-        TileMode tileMode,
-        AlignmentGeometry focal,
-        double focalRadius,
-        GradientTransform transform
+        AlignmentGeometry? center,
+        double? radius,
+        List<double>? stops,
+        List<double>? opacities,
+        TileMode? tileMode,
+        AlignmentGeometry? focal,
+        double? focalRadius,
+        GradientTransform? transform
       }
     ) {
     return isDarkModeEnabled
@@ -156,13 +155,13 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   Widget getBackgroundSweepGradient(
       BackgroundGradientType type,
       {
-        AlignmentGeometry center,
-        double startAngle,
-        double endAngle,
-        List<double> stops,
-        List<double> opacities,
-        TileMode tileMode,
-        GradientTransform transform
+        AlignmentGeometry? center,
+        double? startAngle,
+        double? endAngle,
+        List<double>? stops,
+        List<double>? opacities,
+        TileMode? tileMode,
+        GradientTransform? transform
       }
   ) {
     return isDarkModeEnabled
@@ -276,19 +275,24 @@ List<BoxShadow> createThemedShadow(
     ShadowHardness shadowHardness) {
 
   var offset = getOffset(lightSourcePosition);
-  var shadowColor = color.withOpacity(getShadowOpacity(shadowIntensity));
+  // var shadowColor = color.withOpacity(getShadowOpacity(shadowIntensity));
   var blurRadius = getShadowBlurRadius(shadowHardness);
 
   return createShadow(color: color, offset: offset, blurRadius: blurRadius, spreadRadius: 0.0);
 }
 
-List<BoxShadow> createShadow({Color color, Offset offset, double blurRadius, double spreadRadius}) {
+List<BoxShadow> createShadow({
+  Color color = Colors.black54,
+  Offset offset = const Offset(0.0, 4.0),
+  double blurRadius = 10.0,
+  double spreadRadius = 0.0
+}) {
   return [
     BoxShadow(
-        color: color != null ? color : Colors.black54,
-        offset: offset != null ? offset : Offset(0.0, 4.0),
-        blurRadius: blurRadius != null ? blurRadius : 10.0,
-        spreadRadius: spreadRadius != null ? spreadRadius : 0.0
+        color: color,
+        offset: offset,
+        blurRadius: blurRadius,
+        spreadRadius: spreadRadius
     ),
   ];
 }
@@ -301,14 +305,14 @@ enum BackgroundGradientType {
 }
 
 Widget createSweepGradient(
-  List<Color> colors,
-  AlignmentGeometry center,
-  double startAngle,
-  double endAngle,
-  List<double> stops,
-  List<double> opacities,
-  TileMode tileMode,
-  GradientTransform transform
+  { required List<Color> colors,
+  AlignmentGeometry? center,
+  double? startAngle,
+  double? endAngle,
+  List<double>? stops,
+  List<double>? opacities,
+  TileMode? tileMode,
+  GradientTransform? transform }
 ) {
   return Container(
     decoration: BoxDecoration(
@@ -316,7 +320,7 @@ Widget createSweepGradient(
         colors: _applyOpacitiesToColors(colors, opacities),
         center: center != null ? center : Alignment.center,
         startAngle: startAngle != null ? startAngle : 0.0,
-        endAngle: endAngle != null ? endAngle :math.pi * 2,
+        endAngle: endAngle != null ? endAngle : math.pi * 2,
         stops: stops,
         tileMode: tileMode != null ? tileMode : TileMode.clamp,
         transform: transform
@@ -326,15 +330,15 @@ Widget createSweepGradient(
 }
 
 Widget createRadialGradient(
-    List<Color> colors,
-    AlignmentGeometry center,
-    double radius,
-    List<double> stops,
-    List<double> opacities,
-    TileMode tileMode,
-    AlignmentGeometry focal,
-    double focalRadius,
-    GradientTransform transform
+    { required List<Color> colors,
+    AlignmentGeometry? center,
+    double? radius,
+    List<double>? stops,
+    List<double>? opacities,
+    TileMode? tileMode,
+    AlignmentGeometry? focal,
+    double? focalRadius,
+    GradientTransform? transform }
 ) {
   return Container(
     decoration: BoxDecoration(
@@ -353,13 +357,13 @@ Widget createRadialGradient(
 }
 
 Widget createLinearGradient(
-    List<Color> colors,
-    AlignmentGeometry begin,
-    AlignmentGeometry end,
-    List<double> stops,
-    List<double> opacities,
-    TileMode tileMode,
-    GradientTransform transform
+    { required List<Color> colors,
+    AlignmentGeometry? begin,
+    AlignmentGeometry? end,
+    List<double>? stops,
+    List<double>? opacities,
+    TileMode? tileMode,
+    GradientTransform? transform }
 ) {
   return Container(
     decoration: BoxDecoration(
@@ -375,11 +379,12 @@ Widget createLinearGradient(
   );
 }
 
-List<Color> _applyOpacitiesToColors(List<Color> colors, List<double> opacities) {
-  var updatedColors = List<Color>();
+List<Color> _applyOpacitiesToColors(List<Color> colors, List<double>? nullableOpacities) {
+  var opacities = nullableOpacities != null ? nullableOpacities : <double>[];
+  var updatedColors = <Color>[];
   for(var i = 0; i < colors.length; i++) {
     var opacity = 1.0;
-    if (opacities == null || opacities.length == 0) {
+    if (opacities.length == 0) {
       //No opacity supplied, make everything visible
       opacity = 1.0;
     } else if (opacities.length == 1) {
@@ -495,6 +500,28 @@ FontWeight getFontWeight(Emphasis emphasis) {
     default:
       return FontWeight.normal;//w400
   }
+}
+
+MaterialColor toMaterialColor(Color color) {
+  int red = color.red;
+  int green = color.green;
+  int blue = color.blue;
+  Color defaultMaterialColor = Color.fromRGBO(136, green,  blue, .6);
+
+  Map<int, Color> colorMap =
+  {
+    50:Color.fromRGBO(red, green,  blue, .1),
+    100:Color.fromRGBO(136, green,  blue, .2),
+    200:Color.fromRGBO(136, green,  blue, .3),
+    300:Color.fromRGBO(136, green,  blue, .4),
+    400:Color.fromRGBO(136, green,  blue, .5),
+    500:defaultMaterialColor,
+    600:Color.fromRGBO(136, green,  blue, .7),
+    700:Color.fromRGBO(136, green,  blue, .8),
+    800:Color.fromRGBO(136, green,  blue, .9),
+    900:Color.fromRGBO(136, green,  blue, 1),
+  };
+  return MaterialColor(defaultMaterialColor.value, colorMap);
 }
 
 //The default color palette will make the app look like a wireframe

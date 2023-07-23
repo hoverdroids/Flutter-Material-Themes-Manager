@@ -9,7 +9,7 @@ class LightThemeGroup extends ThemeGroup {
   ThemeData mainOnMain({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     return ThemeData(
       primaryColor: colorPalette.primary,
-      primarySwatch: colorPalette.primary,
+      primarySwatch: toMaterialColor(colorPalette.primary),
       primaryColorDark: colorPalette.primary,
       primaryColorLight: colorPalette.primary,
       visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -1065,75 +1065,75 @@ class LightThemeGroup extends ThemeGroup {
   }
 
   @override
-  Widget mainBackgroundGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+  Widget mainBackgroundGradient(AlignmentGeometry? begin, AlignmentGeometry? end, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform) {
     var colors = [colorPalette.lightBg, colorPalette.lightBgAccent];
-    return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
+    return createLinearGradient(colors:colors, begin:begin, end:end, stops:stops, opacities:opacities, tileMode:tileMode, transform:transform);
   }
 
   @override
-  Widget mainBackgroundRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform) {
+  Widget mainBackgroundRadialGradient(AlignmentGeometry? center, double? radius, List<double>? stops, List<double>? opacities, TileMode? tileMode, AlignmentGeometry? focal, double? focalRadius, GradientTransform? transform) {
     var colors = [colorPalette.lightBg, colorPalette.lightBgAccent];
-    return createRadialGradient(colors, center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+    return createRadialGradient(colors:colors, center:center, radius:radius, stops:stops, opacities:opacities, tileMode:tileMode, focal:focal, focalRadius:focalRadius, transform:transform);
   }
 
   @override
-  Widget mainBackgroundSweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+  Widget mainBackgroundSweepGradient(AlignmentGeometry? center, double? startAngle, double? endAngle, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform) {
     var colors = [colorPalette.lightBg, colorPalette.lightBgAccent];
-    return createSweepGradient(colors, center, startAngle, endAngle, stops, opacities, tileMode, transform);
+    return createSweepGradient(colors:colors, center:center, startAngle:startAngle, endAngle:endAngle, stops:stops, opacities:opacities, tileMode:tileMode, transform:transform);
   }
 
   @override
-  Widget mainForegroundGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+  Widget mainForegroundGradient(AlignmentGeometry? begin, AlignmentGeometry? end, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform) {
     var colors = [colorPalette.lightFg, colorPalette.lightFgAccent];
-    return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
+    return createLinearGradient(colors:colors, begin:begin, end:end, stops:stops, opacities:opacities, tileMode:tileMode, transform:transform);
   }
 
   @override
-  Widget mainForegroundRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform) {
+  Widget mainForegroundRadialGradient(AlignmentGeometry? center, double? radius, List<double>? stops, List<double>? opacities, TileMode? tileMode, AlignmentGeometry? focal, double? focalRadius, GradientTransform? transform) {
     var colors = [colorPalette.lightFg, colorPalette.lightFgAccent];
-    return createRadialGradient(colors, center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+    return createRadialGradient(colors:colors, center:center, radius:radius, stops:stops, opacities:opacities, tileMode:tileMode, focal:focal, focalRadius:focalRadius, transform:transform);
   }
 
   @override
-  Widget mainForegroundSweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+  Widget mainForegroundSweepGradient(AlignmentGeometry? center, double? startAngle, double? endAngle, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform) {
     var colors = [colorPalette.lightFg, colorPalette.lightFgAccent];
-    return createSweepGradient(colors, center, startAngle, endAngle, stops, opacities, tileMode, transform);
+    return createSweepGradient(colors:colors, center:center, startAngle:startAngle, endAngle:endAngle, stops:stops, opacities:opacities, tileMode:tileMode, transform:transform);
   }
 
   @override
-  Widget primaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+  Widget primaryGradient(AlignmentGeometry? begin, AlignmentGeometry? end, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform) {
     var colors = [colorPalette.primary, colorPalette.primaryAccent];
-    return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
+    return createLinearGradient(colors:colors, begin:begin, end:end, stops:stops, opacities:opacities, tileMode:tileMode, transform:transform);
   }
 
   @override
-  Widget primaryRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform) {
+  Widget primaryRadialGradient(AlignmentGeometry? center, double? radius, List<double>? stops, List<double>? opacities, TileMode? tileMode, AlignmentGeometry? focal, double? focalRadius, GradientTransform? transform) {
     var colors = [colorPalette.primary, colorPalette.primaryAccent];
-    return createRadialGradient(colors, center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+    return createRadialGradient(colors:colors, center:center, radius:radius, stops:stops, opacities:opacities, tileMode:tileMode, focal:focal, focalRadius:focalRadius, transform:transform);
   }
 
   @override
-  Widget primarySweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+  Widget primarySweepGradient(AlignmentGeometry? center, double? startAngle, double? endAngle, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform) {
     var colors = [colorPalette.primary, colorPalette.primaryAccent];
-    return createSweepGradient(colors, center, startAngle, endAngle, stops, opacities, tileMode, transform);
+    return createSweepGradient(colors:colors, center:center, startAngle:startAngle, endAngle:endAngle, stops:stops, opacities:opacities, tileMode:tileMode, transform:transform);
   }
 
   @override
-  Widget secondaryGradient(AlignmentGeometry begin, AlignmentGeometry end, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+  Widget secondaryGradient(AlignmentGeometry? begin, AlignmentGeometry? end, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform) {
     var colors = [colorPalette.secondary, colorPalette.secondaryAccent];
-    return createLinearGradient(colors, begin, end, stops, opacities, tileMode, transform);
+    return createLinearGradient(colors:colors, begin:begin, end:end, stops:stops, opacities:opacities, tileMode:tileMode, transform:transform);
   }
 
   @override
-  Widget secondaryRadialGradient(AlignmentGeometry center, double radius, List<double> stops, List<double> opacities, TileMode tileMode, AlignmentGeometry focal, double focalRadius, GradientTransform transform) {
+  Widget secondaryRadialGradient(AlignmentGeometry? center, double? radius, List<double>? stops, List<double>? opacities, TileMode? tileMode, AlignmentGeometry? focal, double? focalRadius, GradientTransform? transform) {
     var colors = [colorPalette.secondary, colorPalette.secondaryAccent];
-    return createRadialGradient(colors, center, radius, stops, opacities, tileMode, focal, focalRadius, transform);
+    return createRadialGradient(colors:colors, center: center, radius:radius, stops:stops, opacities:opacities, tileMode:tileMode, focal:focal, focalRadius:focalRadius, transform:transform);
   }
 
   @override
-  Widget secondarySweepGradient(AlignmentGeometry center, double startAngle, double endAngle, List<double> stops, List<double> opacities, TileMode tileMode, GradientTransform transform) {
+  Widget secondarySweepGradient(AlignmentGeometry? center, double? startAngle, double? endAngle, List<double>? stops, List<double>? opacities, TileMode? tileMode, GradientTransform? transform) {
     var colors = [colorPalette.secondary, colorPalette.secondaryAccent];
-    return createSweepGradient(colors, center, startAngle, endAngle, stops, opacities, tileMode, transform);
+    return createSweepGradient(colors:colors, center:center, startAngle:startAngle, endAngle:endAngle, stops:stops, opacities:opacities, tileMode:tileMode, transform:transform);
   }
 }
 
