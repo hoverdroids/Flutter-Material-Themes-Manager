@@ -28,62 +28,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
           color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
           fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
           color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
           fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
           color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
           fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -93,10 +93,51 @@ class LightThemeGroup extends ThemeGroup {
         color: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
-      /*toggleButtonsTheme: ToggleButtonsThemeData(
-        //TODO - do we want to add more styling?
-      ),*/
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightContrast;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightContrast;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: emphasis == Emphasis.HIGH ? colorPalette.lightContrastImportant : colorPalette.lightContrast,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightContrast;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightContrast;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -116,62 +157,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -181,7 +222,39 @@ class LightThemeGroup extends ThemeGroup {
         color: colorPalette.primary,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : colorPalette.primary,
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primary;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primary;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: colorPalette.primary,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primary;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primary;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -201,62 +274,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel),
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -266,7 +339,39 @@ class LightThemeGroup extends ThemeGroup {
         color: colorPalette.secondary,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : colorPalette.secondary,
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondary;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondary;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: colorPalette.secondary,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondary;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondary;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -288,62 +393,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -353,7 +458,51 @@ class LightThemeGroup extends ThemeGroup {
         color: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightPrimaryContrast;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightPrimaryContrast;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: emphasis == Emphasis.HIGH ? colorPalette.lightPrimaryContrastImportant : colorPalette.lightPrimaryContrast,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightPrimaryContrast;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightPrimaryContrast;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -375,62 +524,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -440,10 +589,51 @@ class LightThemeGroup extends ThemeGroup {
         color: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
-      /*toggleButtonsTheme: ToggleButtonsThemeData(
-        //TODO - do we want to add more styling?
-      ),*/
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.primaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primaryContrast;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightPrimaryContrast;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: emphasis == Emphasis.HIGH ? colorPalette.primaryContrastImportant : colorPalette.primaryContrast,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.primaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primaryContrast;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.primaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primaryContrast;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -465,62 +655,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -530,10 +720,51 @@ class LightThemeGroup extends ThemeGroup {
         color: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
-      /*toggleButtonsTheme: ToggleButtonsThemeData(
-        //TODO - do we want to add more styling?
-      ),*/
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.secondaryPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondaryPrimaryContrast;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightPrimaryContrast;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: emphasis == Emphasis.HIGH ? colorPalette.secondaryPrimaryContrastImportant : colorPalette.secondaryPrimaryContrast,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.secondaryPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondaryPrimaryContrast;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.secondaryPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondaryPrimaryContrast;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -555,62 +786,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -620,7 +851,51 @@ class LightThemeGroup extends ThemeGroup {
         color: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightSecondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightSecondaryContrast;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightPrimaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightPrimaryContrast;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: emphasis == Emphasis.HIGH ? colorPalette.lightSecondaryContrastImportant : colorPalette.lightSecondaryContrast,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightSecondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightSecondaryContrast;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightSecondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightSecondaryContrast;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -642,62 +917,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -707,10 +982,51 @@ class LightThemeGroup extends ThemeGroup {
         color: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
-      /*toggleButtonsTheme: ToggleButtonsThemeData(
-        //TODO - do we want to add more styling?
-      ),*/
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.primarySecondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primarySecondaryContrast;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.primarySecondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primarySecondaryContrast;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: emphasis == Emphasis.HIGH ? colorPalette.primarySecondaryContrastImportant : colorPalette.primarySecondaryContrast,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.primarySecondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primarySecondaryContrast;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.primarySecondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.primarySecondaryContrast;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -732,62 +1048,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -797,10 +1113,51 @@ class LightThemeGroup extends ThemeGroup {
         color: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
-      /*toggleButtonsTheme: ToggleButtonsThemeData(
-        //TODO - do we want to add more styling?
-      ),*/
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.secondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondaryContrast;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.secondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondaryContrast;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: emphasis == Emphasis.HIGH ? colorPalette.secondaryContrastImportant : colorPalette.secondaryContrast,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.secondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondaryContrast;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.secondaryContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondaryContrast;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -822,62 +1179,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -887,10 +1244,51 @@ class LightThemeGroup extends ThemeGroup {
         color: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
-      /*toggleButtonsTheme: ToggleButtonsThemeData(
-        //TODO - do we want to add more styling?
-      ),*/
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightImageContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightImageContrast;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightImageContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightImageContrast;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: emphasis == Emphasis.HIGH ? colorPalette.lightImageContrastImportant : colorPalette.lightImageContrast,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightImageContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightImageContrast;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected) && emphasis == Emphasis.HIGH) {
+            return colorPalette.lightImageContrastImportant;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.lightImageContrast;
+          }
+          return null;
+        }),
+      )
     );
   }
 
@@ -910,62 +1308,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel),
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: colorPalette.primary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -975,7 +1373,39 @@ class LightThemeGroup extends ThemeGroup {
         color: colorPalette.primary,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : colorPalette.primary,
+        switchTheme: SwitchThemeData(
+          thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+            if (states.contains(MaterialState.selected)) {
+              return colorPalette.primary;
+            }
+            return null;
+          }),
+          trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+            if (states.contains(MaterialState.selected)) {
+              return colorPalette.primary;
+            }
+            return null;
+          }),
+        ),
+        toggleButtonsTheme: ToggleButtonsThemeData(
+          fillColor: colorPalette.primary,
+        ),
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+            if (states.contains(MaterialState.selected)) {
+              return colorPalette.primary;
+            }
+            return null;
+          }),
+        ),
+        checkboxTheme: CheckboxThemeData(
+          fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+            if (states.contains(MaterialState.selected)) {
+              return colorPalette.primary;
+            }
+            return null;
+          }),
+        )
     );
   }
 
@@ -995,62 +1425,62 @@ class LightThemeGroup extends ThemeGroup {
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H1)
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H2)
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H3)
         ),
-        headline4: TextStyle(
+        headlineMedium: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H4)
         ),
-        headline5: TextStyle(
+        headlineSmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.H5)
         ),
-        headline6: TextStyle(
+        titleLarge: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.TITLE)
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB1)
         ),
-        subtitle2: TextStyle(
+        titleSmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.SUB2)
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY1)
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.BODY2)
         ),
-        caption: TextStyle(
+        bodySmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.CAPTION)
         ),
-        overline: TextStyle(
+        labelSmall: TextStyle(
             color: colorPalette.secondary,
             fontWeight: getFontWeight(emphasis),
             fontSize: getFontSize(FontSize.OVERLINE)
@@ -1060,7 +1490,39 @@ class LightThemeGroup extends ThemeGroup {
         color: colorPalette.secondary,
         size: getIconSize(iconSize)
       ),
-      toggleableActiveColor : colorPalette.secondary,
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondary;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondary;
+          }
+          return null;
+        }),
+      ),
+      toggleButtonsTheme: ToggleButtonsThemeData(
+        fillColor: colorPalette.secondary,
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondary;
+          }
+          return null;
+        }),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return colorPalette.secondary;
+          }
+          return null;
+        }),
+      )
     );
   }
 
