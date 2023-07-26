@@ -11,7 +11,7 @@ abstract class ThemeGroup {
   }
   
   Widget backgroundGradient(
-    BackgroundGradientType type,
+    BackgroundGradientType? type,
     AlignmentGeometry? begin,
     AlignmentGeometry? end,
     List<double>? stops,
@@ -31,7 +31,7 @@ abstract class ThemeGroup {
   }
 
   Widget backgroundRadialGradient(
-      BackgroundGradientType type,
+      BackgroundGradientType? type,
       AlignmentGeometry? center,
       double? radius,
       List<double>? stops,
@@ -53,7 +53,7 @@ abstract class ThemeGroup {
   }
 
   Widget backgroundSweepGradient(
-      BackgroundGradientType type,
+      BackgroundGradientType? type,
       AlignmentGeometry? center,
       double? startAngle,
       double? endAngle,
@@ -73,7 +73,7 @@ abstract class ThemeGroup {
     }
   }
 
-  ThemeData theme(ThemeGroupType themeGroupType, {Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
+  ThemeData theme(ThemeGroupType? themeGroupType, {Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
     if(themeGroupType == ThemeGroupType.MOM) {
       return mainOnMain(emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
     } else if (themeGroupType == ThemeGroupType.POM) {

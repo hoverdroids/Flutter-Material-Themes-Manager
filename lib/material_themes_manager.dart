@@ -38,7 +38,7 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
     notifyListeners();
   }
 
-  ThemeData getTheme(ThemeGroupType type, {Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL, groupThemeType}) {
+  ThemeData getTheme(ThemeGroupType? type, {Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL, groupThemeType}) {
     return isDarkModeEnabled ? _darkThemeGroup.theme(type, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize) : _lightThemeGroup.theme(type, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
   }
 
@@ -60,12 +60,12 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
 
   BoxDecoration getBoxDecorationShadow(
       {
-        Color color = Colors.transparent,
-        BorderRadius borderRadius = const BorderRadius.all(Radius.circular(20.0)),
-        ShadowType shadowType = ShadowType.DARK,
-        LightSourcePosition lightSourcePosition = LightSourcePosition.TOP_LEFT,
-        ShadowIntensity shadowIntensity = ShadowIntensity.NORMAL,
-        ShadowHardness shadowHardness = ShadowHardness.NORMAL,
+        Color? color = Colors.transparent,
+        BorderRadius? borderRadius = const BorderRadius.all(Radius.circular(20.0)),
+        ShadowType? shadowType = ShadowType.DARK,
+        LightSourcePosition? lightSourcePosition = LightSourcePosition.TOP_LEFT,
+        ShadowIntensity? shadowIntensity = ShadowIntensity.NORMAL,
+        ShadowHardness? shadowHardness = ShadowHardness.NORMAL,
       }
   ) {
     
@@ -83,10 +83,10 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
 
   List<BoxShadow> getBoxShadow(
       {
-        ShadowType shadowType = ShadowType.DARK,
-        LightSourcePosition lightSourcePosition = LightSourcePosition.TOP_LEFT,
-        ShadowIntensity shadowIntensity = ShadowIntensity.NORMAL,
-        ShadowHardness shadowHardness = ShadowHardness.NORMAL
+        ShadowType? shadowType = ShadowType.DARK,
+        LightSourcePosition? lightSourcePosition = LightSourcePosition.TOP_LEFT,
+        ShadowIntensity? shadowIntensity = ShadowIntensity.NORMAL,
+        ShadowHardness? shadowHardness = ShadowHardness.NORMAL
       }
   ) {
     
@@ -119,7 +119,7 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   }*/
 
   Widget getBackgroundGradient(
-      BackgroundGradientType type,
+      BackgroundGradientType? type,
       {
         AlignmentGeometry? begin,
         AlignmentGeometry? end,
@@ -135,7 +135,7 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   }
 
   Widget getBackgroundRadialGradient(
-      BackgroundGradientType type,
+      BackgroundGradientType? type,
       {
         AlignmentGeometry? center,
         double? radius,
@@ -153,7 +153,7 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   }
 
   Widget getBackgroundSweepGradient(
-      BackgroundGradientType type,
+      BackgroundGradientType? type,
       {
         AlignmentGeometry? center,
         double? startAngle,
@@ -204,7 +204,7 @@ enum LightSourcePosition {
   CENTER
 }
 
-Offset getOffset(LightSourcePosition lightSourcePosition) {
+Offset getOffset(LightSourcePosition? lightSourcePosition) {
   if(lightSourcePosition == LightSourcePosition.TOP_LEFT) {
       return Offset(4.0, 4.0);
   } else if(lightSourcePosition == LightSourcePosition.TOP) {
@@ -233,7 +233,7 @@ enum ShadowIntensity {
   DARK
 }
 
-double getShadowOpacity(ShadowIntensity intensity) {
+double getShadowOpacity(ShadowIntensity? intensity) {
   if (intensity == ShadowIntensity.NONE) {
     return 0.0;
   } else if (intensity == ShadowIntensity.SOFT) {
@@ -251,7 +251,7 @@ enum ShadowHardness {
   SOFT
 }
 
-double getShadowBlurRadius(ShadowHardness sharpness) {
+double getShadowBlurRadius(ShadowHardness? sharpness) {
   if (sharpness == ShadowHardness.HARD) {
     return 0.0;
   } else if (sharpness == ShadowHardness.NORMAL) {
@@ -270,12 +270,12 @@ enum ShadowType {
 
 List<BoxShadow> createThemedShadow(
     Color color,
-    LightSourcePosition lightSourcePosition,
-    ShadowIntensity shadowIntensity,
-    ShadowHardness shadowHardness) {
+    LightSourcePosition? lightSourcePosition,
+    ShadowIntensity? shadowIntensity,
+    ShadowHardness? shadowHardness) {
 
   var offset = getOffset(lightSourcePosition);
-  // var shadowColor = color.withOpacity(getShadowOpacity(shadowIntensity));
+  //TODO - CHRIS - var shadowColor = color.withOpacity(getShadowOpacity(shadowIntensity));
   var blurRadius = getShadowBlurRadius(shadowHardness);
 
   return createShadow(color: color, offset: offset, blurRadius: blurRadius, spreadRadius: 0.0);
@@ -418,7 +418,7 @@ enum ElevationLevel {
   FLAT, LOW, MEDIUM, HIGH, EXTREME
 }
 
-double getElevation(ElevationLevel elevation) {
+double getElevation(ElevationLevel? elevation) {
   switch(elevation) {
     case ElevationLevel.EXTREME:
       return 24;
@@ -438,7 +438,7 @@ enum IconSize {
   MINI, SMALL, MEDIUM, LARGE
 }
 
-double getIconSize(IconSize size) {
+double getIconSize(IconSize? size) {
   switch(size) {
     case IconSize.LARGE:
       return 48;
@@ -460,7 +460,7 @@ enum FontSize {
   H1, H2, H3, H4, H5, TITLE, SUB1, SUB2, BODY1, BODY2, CAPTION, OVERLINE
 }
 
-double getFontSize(FontSize size) {
+double getFontSize(FontSize? size) {
   switch(size) {
     case FontSize.H1:
       return 96;
@@ -489,7 +489,7 @@ double getFontSize(FontSize size) {
   }
 }
 
-FontWeight getFontWeight(Emphasis emphasis) {
+FontWeight getFontWeight(Emphasis? emphasis) {
   switch(emphasis) {
     case Emphasis.HIGH:
       return FontWeight.bold;//w700
@@ -506,20 +506,20 @@ MaterialColor toMaterialColor(Color color) {
   int red = color.red;
   int green = color.green;
   int blue = color.blue;
-  Color defaultMaterialColor = Color.fromRGBO(136, green,  blue, .6);
+  Color defaultMaterialColor = Color.fromRGBO(red, green,  blue, .6);
 
   Map<int, Color> colorMap =
   {
     50:Color.fromRGBO(red, green,  blue, .1),
-    100:Color.fromRGBO(136, green,  blue, .2),
-    200:Color.fromRGBO(136, green,  blue, .3),
-    300:Color.fromRGBO(136, green,  blue, .4),
-    400:Color.fromRGBO(136, green,  blue, .5),
+    100:Color.fromRGBO(red, green,  blue, .2),
+    200:Color.fromRGBO(red, green,  blue, .3),
+    300:Color.fromRGBO(red, green,  blue, .4),
+    400:Color.fromRGBO(red, green,  blue, .5),
     500:defaultMaterialColor,
-    600:Color.fromRGBO(136, green,  blue, .7),
-    700:Color.fromRGBO(136, green,  blue, .8),
-    800:Color.fromRGBO(136, green,  blue, .9),
-    900:Color.fromRGBO(136, green,  blue, 1),
+    600:Color.fromRGBO(red, green,  blue, .7),
+    700:Color.fromRGBO(red, green,  blue, .8),
+    800:Color.fromRGBO(red, green,  blue, .9),
+    900:Color.fromRGBO(red, green,  blue, 1),
   };
   return MaterialColor(defaultMaterialColor.value, colorMap);
 }
