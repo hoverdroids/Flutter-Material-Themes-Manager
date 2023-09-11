@@ -21,12 +21,27 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def flutterMinSdkVersion = localProperties.getProperty('flutter.minSdkVersion')
+if (flutterMinSdkVersion == null) {
+    flutterMinSdkVersion =  flutter.minSdkVersion// is 16
+}
+
+def flutterTargetSdkVersion = localProperties.getProperty('flutter.targetSdkVersion')
+if (flutterTargetSdkVersion == null) {
+    flutterTargetSdkVersion = flutter.targetSdkVersion// is 31
+}
+
+def flutterCompileSdkVersion = localProperties.getProperty('flutter.compileSdkVersion')
+if (flutterCompileSdkVersion == null) {
+    flutterCompileSdkVersion = flutter.compileSdkVersion// is 31
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion flutterCompileSdkVersion.toInteger()
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -37,10 +52,14 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.example"
-        minSdkVersion 16
-        targetSdkVersion 28
+        applicationId "com.tcubedstudios.materialthemesmanager"
+
+        //minSdkVersion flutter.minSdkVersion <- is 16, need higher
+        minSdkVersion flutterMinSdkVersion.toInteger()
+
+        //targetSdkVersion flutter.targetSdkVersion <- is 31, need higher
+        targetSdkVersion flutterTargetSdkVersion.toInteger()
+
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }

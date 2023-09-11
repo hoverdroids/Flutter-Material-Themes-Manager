@@ -1,3 +1,4 @@
+## [1.2.0] - Updated sdk to >=3.0.0 <4.0.0
 ## [1.1.0] - Allow more null pass-through given that destination implementations can handle it.
 ## [1.0.0]  - Null safety. Support flutter 3.10.6. Migrate deprecated textTheme attributes. Migrate deprecated toggleableActiveColor 
 ## [0.0.24] - Set themeData primary colors to the same as the color palette
