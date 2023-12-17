@@ -1,6 +1,7 @@
+## [1.3.0]  - Regenerated package and example with MacOS Sonoma 14.1 on Apple M2 Pro with Flutter 3.16.0-19.0.pre, Dart 3.3.0 (build 3.3.0-71.0.dev, and DevTools 2.28.1
 ## [1.2.0] - Updated sdk to >=3.0.0 <4.0.0
 ## [1.1.0] - Allow more null pass-through given that destination implementations can handle it.
-## [1.0.0]  - Null safety. Support flutter 3.10.6. Migrate deprecated textTheme attributes. Migrate deprecated toggleableActiveColor 
+## [1.0.0]  - Null safety. Support flutter 3.10.6. Migrate deprecated textTheme attributes. Migrate deprecated toggleableActiveColor
 ## [0.0.24] - Set themeData primary colors to the same as the color palette
 ## [0.0.23] - Added border radius and foreground color
 ## [0.0.22] - Removed white overlay from shadow

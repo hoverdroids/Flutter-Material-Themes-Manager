@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:material_themes_manager/material_themes_manager.dart';
 import 'package:provider/provider.dart';
@@ -20,12 +22,12 @@ class MyApp extends StatelessWidget {
     return Consumer<MaterialThemesManager>(
       builder: (context, themeManager, child) {
         return MaterialApp(
-          title: "Theme Manager Demo",
-          home: MyHomePage(),
-          debugShowCheckedModeBanner: themeManager.isDarkModeEnabled,
-          themeMode: themeManager.getThemeMode(),
-          theme: themeManager.getPrimaryLightTheme(),
-          darkTheme: themeManager.getPrimaryDarkTheme()
+            title: "Theme Manager Demo",
+            home: MyHomePage(),
+            debugShowCheckedModeBanner: themeManager.isDarkModeEnabled,
+            themeMode: themeManager.getThemeMode(),
+            theme: themeManager.getPrimaryLightTheme(),
+            darkTheme: themeManager.getPrimaryDarkTheme()
         );
       },
     );
@@ -64,12 +66,12 @@ class MyHomePage extends StatelessWidget {
                     width: 150,
                     height: 150,
                     decoration: context.watch<MaterialThemesManager>().getBoxDecorationShadow(
-                        //lightSourcePosition: LightSourcePosition.CENTER,
-                        //shadowType: ShadowType.SECONDARY,
-                        //shadowHardness: ShadowHardness.SOFT,
+                      //lightSourcePosition: LightSourcePosition.CENTER,
+                      //shadowType: ShadowType.SECONDARY,
+                      //shadowHardness: ShadowHardness.SOFT,
                         shadowIntensity: ShadowIntensity.DARK
-                      ),
                     ),
+                  ),
                 ],
               ),
             ),
