@@ -389,7 +389,7 @@ class LightThemeGroup extends ThemeGroup {
         ),*/
       ),
       cardTheme: CardTheme(
-        color: this.colorPalette.lightFg,
+        color: colorPalette.lightFg,
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(
@@ -782,7 +782,7 @@ class LightThemeGroup extends ThemeGroup {
         ),*/
       ),
       cardTheme: CardTheme(
-        color: this.colorPalette.lightFg,
+        color: colorPalette.lightFg,
         elevation: getElevation(elevationLevel)
       ),
       textTheme: TextTheme(

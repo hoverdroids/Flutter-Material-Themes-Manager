@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 library material_themes_manager;
 
 import 'dart:math' as math;
@@ -13,8 +15,8 @@ import 'package:material_themes_manager/src/theme_group.dart';
 class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
 
   bool isDarkModeEnabled = false;
-  ThemeGroup _darkThemeGroup = DarkThemeGroup();
-  ThemeGroup _lightThemeGroup = LightThemeGroup();
+  final ThemeGroup _darkThemeGroup = DarkThemeGroup();
+  final ThemeGroup _lightThemeGroup = LightThemeGroup();
   ColorPalette _colorPalette = ColorPalette();
 
   updateColorPalette(ColorPalette colorPalette) {
@@ -34,7 +36,7 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   }
 
   void toggleDarkModeEnabled() {
-    this.isDarkModeEnabled = !this.isDarkModeEnabled;
+    isDarkModeEnabled = !isDarkModeEnabled;
     notifyListeners();
   }
 
@@ -205,24 +207,25 @@ enum LightSourcePosition {
 }
 
 Offset getOffset(LightSourcePosition? lightSourcePosition) {
-  if(lightSourcePosition == LightSourcePosition.TOP_LEFT) {
-      return Offset(4.0, 4.0);
-  } else if(lightSourcePosition == LightSourcePosition.TOP) {
-    return Offset(0.0, 4.0);
-  } else if(lightSourcePosition == LightSourcePosition.TOP_RIGHT) {
-    return Offset(-4.0, 4.0);
-  } else if(lightSourcePosition == LightSourcePosition.RIGHT) {
-    return Offset(-4.0, 0.0);
-  } else if(lightSourcePosition == LightSourcePosition.BOTTOM_RIGHT) {
-    return Offset(-4.0, -4.0);
-  } else if(lightSourcePosition == LightSourcePosition.BOTTOM) {
-    return Offset(0.0, -4.0);
-  } else if(lightSourcePosition == LightSourcePosition.BOTTOM_LEFT) {
-    return Offset(4.0, -4.0);
-  } else if(lightSourcePosition == LightSourcePosition.LEFT) {
-    return Offset(4.0, 0.0);
-  } else {
-    return Offset(0.0, 0.0);
+  switch(lightSourcePosition) {
+    case LightSourcePosition.TOP_LEFT:
+      return const Offset(4.0, 4.0);
+    case LightSourcePosition.TOP:
+      return const Offset(0.0, 4.0);
+    case LightSourcePosition.TOP_RIGHT:
+      return const Offset(-4.0, 4.0);
+    case LightSourcePosition.RIGHT:
+      return const Offset(-4.0, 0.0);
+    case LightSourcePosition.BOTTOM_RIGHT:
+      return const Offset(-4.0, -4.0);
+    case LightSourcePosition.BOTTOM:
+      return const Offset(0.0, -4.0);
+    case LightSourcePosition.BOTTOM_LEFT:
+      return const Offset(4.0, -4.0);
+    case LightSourcePosition.LEFT:
+      return const Offset(4.0, 0.0);
+    default:
+      return const Offset(0.0, 0.0);
   }
 }
 
@@ -318,11 +321,11 @@ Widget createSweepGradient(
     decoration: BoxDecoration(
       gradient: SweepGradient(
         colors: _applyOpacitiesToColors(colors, opacities),
-        center: center != null ? center : Alignment.center,
-        startAngle: startAngle != null ? startAngle : 0.0,
-        endAngle: endAngle != null ? endAngle : math.pi * 2,
+        center: center ?? Alignment.center,
+        startAngle: startAngle ?? 0.0,
+        endAngle: endAngle ?? math.pi * 2,
         stops: stops,
-        tileMode: tileMode != null ? tileMode : TileMode.clamp,
+        tileMode: tileMode ?? TileMode.clamp,
         transform: transform
       ),
     ),
@@ -344,12 +347,12 @@ Widget createRadialGradient(
     decoration: BoxDecoration(
       gradient: RadialGradient(
           colors: _applyOpacitiesToColors(colors, opacities),
-          center: center != null ? center : Alignment.center,
-          radius: radius != null ? radius : 0.5,
+          center: center ?? Alignment.center,
+          radius: radius ?? 0.5,
           stops: stops,
-          tileMode: tileMode != null ? tileMode : TileMode.clamp,
+          tileMode: tileMode ?? TileMode.clamp,
           focal: focal,
-          focalRadius: focalRadius != null ? focalRadius : 0.0,
+          focalRadius: focalRadius ?? 0.0,
           transform: transform
       ),
     ),
@@ -369,10 +372,10 @@ Widget createLinearGradient(
     decoration: BoxDecoration(
       gradient: LinearGradient(
         colors: _applyOpacitiesToColors(colors, opacities),
-        begin: begin != null ? begin : Alignment.topCenter,
-        end: end != null ? end : Alignment.bottomCenter,
+        begin: begin ?? Alignment.topCenter,
+        end: end ?? Alignment.bottomCenter,
         stops: stops,
-        tileMode: tileMode != null ? tileMode : TileMode.clamp,
+        tileMode: tileMode ?? TileMode.clamp,
         transform: transform
       ),
     ),
@@ -380,11 +383,11 @@ Widget createLinearGradient(
 }
 
 List<Color> _applyOpacitiesToColors(List<Color> colors, List<double>? nullableOpacities) {
-  var opacities = nullableOpacities != null ? nullableOpacities : <double>[];
+  var opacities = nullableOpacities ?? <double>[];
   var updatedColors = <Color>[];
   for(var i = 0; i < colors.length; i++) {
     var opacity = 1.0;
-    if (opacities.length == 0) {
+    if (opacities.isEmpty) {
       //No opacity supplied, make everything visible
       opacity = 1.0;
     } else if (opacities.length == 1) {
