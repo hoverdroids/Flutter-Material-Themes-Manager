@@ -49,11 +49,26 @@ class MaterialThemesManager with ChangeNotifier, DiagnosticableTreeMixin {
   }
 
   ThemeData getPrimaryLightTheme({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
-    return _lightThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
+    return _withPaletteColorScheme(_lightThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize), Brightness.light);
   }
 
   ThemeData getPrimaryDarkTheme({Emphasis emphasis = Emphasis.NONE, ElevationLevel elevationLevel = ElevationLevel.LOW, IconSize iconSize = IconSize.SMALL}) {
-    return _darkThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize);
+    return _withPaletteColorScheme(_darkThemeGroup.theme(ThemeGroupType.MOM, emphasis: emphasis, elevationLevel: elevationLevel, iconSize: iconSize), Brightness.dark);
+  }
+
+  // Material 3 widgets that aren't themed individually (progress indicators, dialog buttons,
+  // checkboxes, date pickers) take their colors from the color scheme. Without one, Flutter
+  // uses its default purple instead of the app's palette.
+  ThemeData _withPaletteColorScheme(ThemeData theme, Brightness brightness) {
+    final palette = colorPalette();
+    return theme.copyWith(
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: palette.primary,
+        primary: palette.primary,
+        secondary: palette.secondary,
+        brightness: brightness,
+      ),
+    );
   }
 
   ThemeMode getThemeMode() {

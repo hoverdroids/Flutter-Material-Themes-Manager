@@ -1,3 +1,4 @@
+## [1.6.0]  - App themes get a color scheme from the palette, so default Material 3 widgets (progress indicators, dialog buttons, checkboxes) use the brand colors instead of Flutter's purple
 ## [1.5.0]  - Builds with current Flutter: CardTheme replaced by CardThemeData. Requires Flutter 3.27 or newer
 ## [1.4.0]  - Applied Intellisense suggestions
 ## [1.3.0]  - Regenerated package and example with MacOS Sonoma 14.1 on Apple M2 Pro with Flutter 3.16.0-19.0.pre, Dart 3.3.0 (build 3.3.0-71.0.dev, and DevTools 2.28.1
