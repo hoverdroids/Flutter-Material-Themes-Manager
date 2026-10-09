@@ -23,7 +23,7 @@ class LightThemeGroup extends ThemeGroup {
         textTheme: TextTheme(
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.lightFg,
         elevation: getElevation(elevationLevel)
       ),
@@ -152,7 +152,7 @@ class LightThemeGroup extends ThemeGroup {
           color: Colors.white,
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.primary,
         elevation: getElevation(elevationLevel)
       ),
@@ -269,7 +269,7 @@ class LightThemeGroup extends ThemeGroup {
           color: Colors.white,
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.secondary,
         elevation: getElevation(elevationLevel),
       ),
@@ -388,7 +388,7 @@ class LightThemeGroup extends ThemeGroup {
         textTheme: TextTheme(
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.lightFg,
         elevation: getElevation(elevationLevel)
       ),
@@ -519,7 +519,7 @@ class LightThemeGroup extends ThemeGroup {
         textTheme: TextTheme(
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.primaryContrast,
         elevation: getElevation(elevationLevel)
       ),
@@ -650,7 +650,7 @@ class LightThemeGroup extends ThemeGroup {
         textTheme: TextTheme(
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.secondaryPrimaryContrast,
         elevation: getElevation(elevationLevel)
       ),
@@ -781,7 +781,7 @@ class LightThemeGroup extends ThemeGroup {
         textTheme: TextTheme(
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.lightFg,
         elevation: getElevation(elevationLevel)
       ),
@@ -912,7 +912,7 @@ class LightThemeGroup extends ThemeGroup {
         textTheme: TextTheme(
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.primarySecondaryContrast,
         elevation: getElevation(elevationLevel)
       ),
@@ -1043,7 +1043,7 @@ class LightThemeGroup extends ThemeGroup {
         textTheme: TextTheme(
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.secondaryContrast,
         elevation: getElevation(elevationLevel)
       ),
@@ -1174,7 +1174,7 @@ class LightThemeGroup extends ThemeGroup {
         textTheme: TextTheme(
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.lightFg,
         elevation: getElevation(elevationLevel)
       ),
@@ -1303,7 +1303,7 @@ class LightThemeGroup extends ThemeGroup {
           color: Colors.white,
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.primary,
         elevation: getElevation(elevationLevel),
       ),
@@ -1420,7 +1420,7 @@ class LightThemeGroup extends ThemeGroup {
           color: Colors.white,
         ),*/
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colorPalette.secondary,
         elevation: getElevation(elevationLevel)
       ),
